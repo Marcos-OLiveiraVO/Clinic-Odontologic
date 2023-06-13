@@ -34,6 +34,10 @@ O sistema de clínica odontológica é uma aplicação web que permite gerenciar
 4. Configure as variáveis de ambiente necessárias, como informações de conexão com o banco de dados.
 5. Execute o comando `npm run start` para iniciar a aplicação.
 
+
+![image](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/21facd77-7b25-452c-9ec5-5e08cc1f89a6)
+
+
 ## Contribuição
 
 Contribuições são bem-vindas! Se você quiser melhorar este projeto, siga as etapas abaixo:
