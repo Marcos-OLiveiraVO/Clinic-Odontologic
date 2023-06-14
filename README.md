@@ -2,6 +2,8 @@
 
 This repository contains the source code for a dental clinic system developed using Node.js, TypeScript, and the NestJS framework.
 
+[To a version of the readme in portuguese please acess.](readme.md)
+
 ## Description
 
 The dental clinic system is a web application that allows the management of appointments, patients, dentists, treatments, invoices, and payments related to a dental clinic. The main objective is to provide an efficient solution to assist with appointment scheduling, treatment management, and financial tracking of the clinic.
