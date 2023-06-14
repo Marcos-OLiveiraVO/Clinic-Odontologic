@@ -18,6 +18,9 @@ O sistema de clínica odontológica é uma aplicação web que permite gerenciar
 ## Diagrama do sistema. 
 ![image](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/bdff8c94-742c-4a7c-af71-095caa430d9b)
 
+## Documentation 
+[For all documentation consult the documentation.md](documentation.md)
+
 ## Tecnologias Utilizadas
 
 - Node.js
