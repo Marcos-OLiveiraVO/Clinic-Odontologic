@@ -1,214 +1,217 @@
+<h2> All routes that api can provider for you </h2>
+
+
 <details>
-<summary><strong>Rotas</strong></summary>
+<summary><strong>Routes</strong></summary>
   <br>
 
 <details>
-<summary><strong>Pacientes</strong></summary>
+<summary><strong>Patients</strong></summary>
 
-#### Listar todos os pacientes
+#### List all patients
 
-- Método: GET
-- Endpoint: `/pacientes`
-- Descrição: Retorna todos os pacientes cadastrados.
+- Method: GET
+- Endpoint: `/patients`
+- Description: Retrieves all registered patients.
 
-#### Obter um paciente
+#### Get a patient
 
-- Método: GET
-- Endpoint: `/pacientes/:id`
-- Descrição: Retorna um paciente específico com base no ID fornecido.
+- Method: GET
+- Endpoint: `/patients/:id`
+- Description: Retrieves a specific patient based on the provided ID.
 
-#### Criar um paciente
+#### Create a patient
 
-- Método: POST
-- Endpoint: `/pacientes`
-- Descrição: Cria um novo paciente com base nos dados fornecidos.
+- Method: POST
+- Endpoint: `/patients`
+- Description: Creates a new patient based on the provided data.
 
-#### Atualizar um paciente
+#### Update a patient
 
-- Método: PUT
-- Endpoint: `/pacientes/:id`
-- Descrição: Atualiza um paciente existente com base no ID fornecido e nos dados fornecidos.
+- Method: PUT
+- Endpoint: `/patients/:id`
+- Description: Updates an existing patient based on the provided ID and data.
 
-#### Excluir um paciente
+#### Delete a patient
 
-- Método: DELETE
-- Endpoint: `/pacientes/:id`
-- Descrição: Exclui um paciente específico com base no ID fornecido.
-
-</details>
-
-<details>
-<summary><strong>Dentistas</strong></summary>
-
-#### Listar todos os dentistas
-
-- Método: GET
-- Endpoint: `/dentistas`
-- Descrição: Retorna todos os dentistas cadastrados.
-
-#### Obter um dentista
-
-- Método: GET
-- Endpoint: `/dentistas/:id`
-- Descrição: Retorna um dentista específico com base no ID fornecido.
-
-#### Criar um dentista
-
-- Método: POST
-- Endpoint: `/dentistas`
-- Descrição: Cria um novo dentista com base nos dados fornecidos.
-
-#### Atualizar um dentista
-
-- Método: PUT
-- Endpoint: `/dentistas/:id`
-- Descrição: Atualiza um dentista existente com base no ID fornecido e nos dados fornecidos.
-
-#### Excluir um dentista
-
-- Método: DELETE
-- Endpoint: `/dentistas/:id`
-- Descrição: Exclui um dentista específico com base no ID fornecido.
+- Method: DELETE
+- Endpoint: `/patients/:id`
+- Description: Deletes a specific patient based on the provided ID.
 
 </details>
 
 <details>
-<summary><strong>Consultas</strong></summary>
+<summary><strong>Dentists</strong></summary>
 
-#### Listar todas as consultas
+#### List all dentists
 
-- Método: GET
-- Endpoint: `/consultas`
-- Descrição: Retorna todas as consultas agendadas.
+- Method: GET
+- Endpoint: `/dentists`
+- Description: Retrieves all registered dentists.
 
-#### Obter uma consulta
+#### Get a dentist
 
-- Método: GET
-- Endpoint: `/consultas/:id`
-- Descrição: Retorna uma consulta específica com base no ID fornecido.
+- Method: GET
+- Endpoint: `/dentists/:id`
+- Description: Retrieves a specific dentist based on the provided ID.
 
-#### Agendar uma consulta
+#### Create a dentist
 
-- Método: POST
-- Endpoint: `/consultas`
-- Descrição: Agenda uma nova consulta com base nos dados fornecidos.
+- Method: POST
+- Endpoint: `/dentists`
+- Description: Creates a new dentist based on the provided data.
 
-#### Atualizar uma consulta
+#### Update a dentist
 
-- Método: PUT
-- Endpoint: `/consultas/:id`
-- Descrição: Atualiza uma consulta existente com base no ID fornecido e nos dados fornecidos.
+- Method: PUT
+- Endpoint: `/dentists/:id`
+- Description: Updates an existing dentist based on the provided ID and data.
 
-#### Cancelar uma consulta
+#### Delete a dentist
 
-- Método: DELETE
-- Endpoint: `/consultas/:id`
-- Descrição: Cancela uma consulta específica com base no ID fornecido.
-
-</details>
-
-<details>
-<summary><strong>Tratamentos</strong></summary>
-
-#### Listar todos os tratamentos
-
-- Método: GET
-- Endpoint: `/tratamentos`
-- Descrição: Retorna todos os tratamentos disponíveis.
-
-#### Obter um tratamento
-
-- Método: GET
-- Endpoint: `/tratamentos/:id`
-- Descrição: Retorna um tratamento específico com base no ID fornecido.
-
-#### Criar um tratamento
-
-- Método: POST
-- Endpoint: `/tratamentos`
-- Descrição: Cria um novo tratamento com base nos dados fornecidos.
-
-#### Atualizar um tratamento
-
-- Método: PUT
-- Endpoint: `/tratamentos/:id`
-- Descrição: Atualiza um tratamento existente com base no ID fornecido e nos dados fornecidos.
-
-#### Excluir um tratamento
-
-- Método: DELETE
-- Endpoint: `/tratamentos/:id`
-- Descrição: Exclui um tratamento específico com base no ID fornecido.
+- Method: DELETE
+- Endpoint: `/dentists/:id`
+- Description: Deletes a specific dentist based on the provided ID.
 
 </details>
 
 <details>
-<summary><strong>Faturas</strong></summary>
+<summary><strong>Appointments</strong></summary>
 
-#### Listar todas as faturas
+#### List all appointments
 
-- Método: GET
-- Endpoint: `/faturas`
-- Descrição: Retorna todas as faturas geradas.
+- Method: GET
+- Endpoint: `/appointments`
+- Description: Retrieves all scheduled appointments.
 
-#### Obter uma fatura
+#### Get an appointment
 
-- Método: GET
-- Endpoint: `/faturas/:id`
-- Descrição: Retorna uma fatura específica com base no ID fornecido.
+- Method: GET
+- Endpoint: `/appointments/:id`
+- Description: Retrieves a specific appointment based on the provided ID.
 
-#### Gerar uma fatura
+#### Schedule an appointment
 
-- Método: POST
-- Endpoint: `/faturas`
-- Descrição: Gera uma nova fatura para um paciente com base nos dados fornecidos.
+- Method: POST
+- Endpoint: `/appointments`
+- Description: Schedules a new appointment based on the provided data.
 
-#### Atualizar uma fatura
+#### Update an appointment
 
-- Método: PUT
-- Endpoint: `/faturas/:id`
-- Descrição: Atualiza uma fatura existente com base no ID fornecido e nos dados fornecidos.
+- Method: PUT
+- Endpoint: `/appointments/:id`
+- Description: Updates an existing appointment based on the provided ID and data.
 
-#### Excluir uma fatura
+#### Cancel an appointment
 
-- Método: DELETE
-- Endpoint: `/faturas/:id`
-- Descrição: Exclui uma fatura específica com base no ID fornecido.
+- Method: DELETE
+- Endpoint: `/appointments/:id`
+- Description: Cancels a specific appointment based on the provided ID.
 
 </details>
 
 <details>
-<summary><strong>Pagamentos</strong></summary>
+<summary><strong>Treatments</strong></summary>
 
-#### Listar todos os pagamentos
+#### List all treatments
 
-- Método: GET
-- Endpoint: `/pagamentos`
-- Descrição: Retorna todos os pagamentos registrados.
+- Method: GET
+- Endpoint: `/treatments`
+- Description: Retrieves all available treatments.
 
-#### Obter um pagamento
+#### Get a treatment
 
-- Método: GET
-- Endpoint: `/pagamentos/:id`
-- Descrição: Retorna um pagamento específico com base no ID fornecido.
+- Method: GET
+- Endpoint: `/treatments/:id`
+- Description: Retrieves a specific treatment based on the provided ID.
 
-#### Registrar um pagamento
+#### Create a treatment
 
-- Método: POST
-- Endpoint: `/pagamentos`
-- Descrição: Registra um novo pagamento para uma fatura com base nos dados fornecidos.
+- Method: POST
+- Endpoint: `/treatments`
+- Description: Creates a new treatment based on the provided data.
 
-#### Atualizar um pagamento
+#### Update a treatment
 
-- Método: PUT
-- Endpoint: `/pagamentos/:id`
-- Descrição: Atualiza um pagamento existente com base no ID fornecido e nos dados fornecidos.
+- Method: PUT
+- Endpoint: `/treatments/:id`
+- Description: Updates an existing treatment based on the provided ID and data.
 
-#### Excluir um pagamento
+#### Delete a treatment
 
-- Método: DELETE
-- Endpoint: `/pagamentos/:id`
-- Descrição: Exclui um pagamento específico com base no ID fornecido.
+- Method: DELETE
+- Endpoint: `/treatments/:id`
+- Description: Deletes a specific treatment based on the provided ID.
+
+</details>
+
+<details>
+<summary><strong>Invoices</strong></summary>
+
+#### List all invoices
+
+- Method: GET
+- Endpoint: `/invoices`
+- Description: Retrieves all generated invoices.
+
+#### Get an invoice
+
+- Method: GET
+- Endpoint: `/invoices/:id`
+- Description: Retrieves a specific invoice based on the provided ID.
+
+#### Generate an invoice
+
+- Method: POST
+- Endpoint: `/invoices`
+- Description: Generates a new invoice for a patient based on the provided data.
+
+#### Update an invoice
+
+- Method: PUT
+- Endpoint: `/invoices/:id`
+- Description: Updates an existing invoice based on the provided ID and data.
+
+#### Delete an invoice
+
+- Method: DELETE
+- Endpoint: `/invoices/:id`
+- Description: Deletes a specific invoice based on the provided ID.
+
+</details>
+
+<details>
+<summary><strong>Payments</strong></summary>
+
+#### List all payments
+
+- Method: GET
+- Endpoint: `/payments`
+- Description: Retrieves all registered payments.
+
+#### Get a payment
+
+- Method: GET
+- Endpoint: `/payments/:id`
+- Description: Retrieves a specific payment based on the provided ID.
+
+#### Register a payment
+
+- Method: POST
+- Endpoint: `/payments`
+- Description: Registers a new payment for an invoice based on the provided data.
+
+#### Update a payment
+
+- Method: PUT
+- Endpoint: `/payments/:id`
+- Description: Updates an existing payment based on the provided ID and data.
+
+#### Delete a payment
+
+- Method: DELETE
+- Endpoint: `/payments/:id`
+- Description: Deletes a specific payment based on the provided ID.
 
 </details>
 
