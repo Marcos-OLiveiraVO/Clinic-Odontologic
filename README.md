@@ -1,61 +1,61 @@
-# Sistema de Clínica Odontológica
+# Dental Clinic System
 
-Este repositório contém o código-fonte de um sistema de clínica odontológica desenvolvido utilizando Node.js, TypeScript e o framework NestJS.
+This repository contains the source code for a dental clinic system developed using Node.js, TypeScript, and the NestJS framework.
 
-## Descrição
+## Description
 
-O sistema de clínica odontológica é uma aplicação web que permite gerenciar consultas, pacientes, dentistas, tratamentos, faturas e pagamentos relacionados a uma clínica odontológica. O objetivo principal é fornecer uma solução eficiente para auxiliar no agendamento de consultas, gerenciamento de tratamentos e acompanhamento financeiro da clínica.
+The dental clinic system is a web application that allows the management of appointments, patients, dentists, treatments, invoices, and payments related to a dental clinic. The main objective is to provide an efficient solution to assist with appointment scheduling, treatment management, and financial tracking of the clinic.
 
-## Funcionalidades
+## Features
 
-- Registro de pacientes com informações pessoais completas
-- Agendamento de consultas entre pacientes e dentistas
-- Gerenciamento de horários de trabalho dos dentistas
-- Cadastro e descrição de diferentes tipos de tratamentos
-- Geração de faturas para pacientes com base nos tratamentos realizados
-- Registro de pagamentos das faturas pelos pacientes
+- Registration of patients with complete personal information
+- Scheduling of appointments between patients and dentists
+- Management of dentists' work schedules
+- Registration and description of different types of treatments
+- Generation of invoices for patients based on performed treatments
+- Recording of payments for invoices by patients
 
-## Diagrama do sistema. 
+## System Diagram
 ![image](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/bdff8c94-742c-4a7c-af71-095caa430d9b)
 
-## Documentation 
-[For all documentation consult the documentation.md](documentation.md)
+## Documentation
+[For all documentation, please consult the documentation.md](documentation.md)
 
-## Tecnologias Utilizadas
+## Technologies Used
 
 - Node.js
 - TypeScript
 - NestJS
 
-## Pré-requisitos
+## Prerequisites
 
-- Node.js (versão >= 16x)
-- yarn (gerenciador de pacotes do Node.js)
+- Node.js (version >= 16x)
+- Yarn (Node.js package manager)
 
-## Instalação
+## Installation
 
-1. Clone este repositório em sua máquina local.
-2. Abra o terminal e navegue até o diretório raiz do projeto.
-3. Execute o comando `yarn` para instalar as dependências.
-4. Configure as variáveis de ambiente necessárias, como informações de conexão com o banco de dados.
-5. Execute o comando `yarn dev` para iniciar a aplicação.
+1. Clone this repository to your local machine.
+2. Open the terminal and navigate to the root directory of the project.
+3. Run the command `yarn` to install the dependencies.
+4. Configure the necessary environment variables, such as database connection information.
+5. Run the command `yarn dev` to start the application.
 
-## Contribuição
+## Contribution
 
-Contribuições são bem-vindas! Se você quiser melhorar este projeto, siga as etapas abaixo:
+Contributions are welcome! If you would like to improve this project, follow the steps below:
 
-1. Fork este repositório.
-2. Crie uma branch com a sua feature: `git checkout -b minha-feature`.
-3. Faça as alterações desejadas e faça commit delas: `git commit -m 'Minha nova feature'`.
-4. Envie as alterações para o repositório remoto: `git push origin minha-feature`.
-5. Envie um pull request, descrevendo as alterações propostas.
+1. Fork this repository.
+2. Create a branch for your feature: `git checkout -b my-feature`.
+3. Make the desired changes and commit them: `git commit -m 'My new feature'`.
+4. Push the changes to the remote repository: `git push origin my-feature`.
+5. Submit a pull request, describing the proposed changes.
 
-## Licença
+## License
 
-Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT).
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-## Contato
+## Contact
 
-Para mais informações ou dúvidas, entre em contato:
+For more information or questions, please contact:
 
 Marcos Oliveira - [marcosoliveira.rd@gmail.com](mailto:marcosoliveira.rd@gmail.com)
