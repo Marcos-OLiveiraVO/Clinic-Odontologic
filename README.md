@@ -15,6 +15,9 @@ O sistema de clínica odontológica é uma aplicação web que permite gerenciar
 - Geração de faturas para pacientes com base nos tratamentos realizados
 - Registro de pagamentos das faturas pelos pacientes
 
+## Diagrama do sistema. 
+![image](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/bdff8c94-742c-4a7c-af71-095caa430d9b)
+
 ## Tecnologias Utilizadas
 
 - Node.js
@@ -23,22 +26,16 @@ O sistema de clínica odontológica é uma aplicação web que permite gerenciar
 
 ## Pré-requisitos
 
-- Node.js (versão X.X.X)
-- npm (gerenciador de pacotes do Node.js)
+- Node.js (versão >= 16x)
+- yarn (gerenciador de pacotes do Node.js)
 
 ## Instalação
 
 1. Clone este repositório em sua máquina local.
 2. Abra o terminal e navegue até o diretório raiz do projeto.
-3. Execute o comando `npm install` para instalar as dependências.
+3. Execute o comando `yarn` para instalar as dependências.
 4. Configure as variáveis de ambiente necessárias, como informações de conexão com o banco de dados.
-5. Execute o comando `npm run start` para iniciar a aplicação.
-
-
-
-![image](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/bdff8c94-742c-4a7c-af71-095caa430d9b)
-
-
+5. Execute o comando `yarn dev` para iniciar a aplicação.
 
 ## Contribuição
 
@@ -58,4 +55,4 @@ Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licens
 
 Para mais informações ou dúvidas, entre em contato:
 
-Seu Nome - [seu-email@example.com](mailto:seu-email@example.com)
+Marcos Oliveira - [marcosoliveira.rd@gmail.com](mailto:marcosoliveira.rd@gmail.com)
