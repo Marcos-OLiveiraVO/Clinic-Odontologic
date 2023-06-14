@@ -2,7 +2,7 @@
 
 This repository contains the source code for a dental clinic system developed using Node.js, TypeScript, and the NestJS framework.
 
-[To a version of the readme in portuguese please acess.](readme.md)
+[To a version of the readme in portuguese please acess.](Readme.md)
 
 ## Description
 
