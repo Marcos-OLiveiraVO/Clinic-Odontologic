@@ -10,12 +10,11 @@ The dental clinic system is a web application that allows the management of appo
 
 ## Features
 
-- Registration of patients with complete personal information
-- Scheduling of appointments between patients and dentists
-- Management of dentists' work schedules
-- Registration and description of different types of treatments
-- Generation of invoices for patients based on performed treatments
-- Recording of payments for invoices by patients
+- Patient registration and management
+- Appointment scheduling and management
+- Treatment registration and description
+- Invoice generation for patients
+- Payment recording and management
 
 ## System Diagram
 ![image](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/e931a5b8-c8af-4f1a-ab75-69d1b473a2c6)
