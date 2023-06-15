@@ -26,7 +26,7 @@ The dental clinic system is a web application that allows the management of appo
 ## Documentation
 [For all documentation, please consult the documentation.md](documentation.md)
 
-[To a version of the documentation in portuguese please acess.](documentationBr.md)
+[To a version of the documentation in portuguese please acess.](documentationBR.md)
 
 ## Technologies Used
 
