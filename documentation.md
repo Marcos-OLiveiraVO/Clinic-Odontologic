@@ -1,9 +1,8 @@
-<h2> All routes that api can provider for you </h2>
-
+<h2>All routes that API can provide for you</h2>
 
 <details>
 <summary><strong>Routes</strong></summary>
-  <br>
+<br>
 
 <details>
 <summary><strong>Patients</strong></summary>

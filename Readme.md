@@ -8,19 +8,12 @@ This repository contains the source code for a dental clinic system developed us
 
 The dental clinic system is a web application that allows the management of appointments, patients, dentists, treatments, invoices, and payments related to a dental clinic. The main objective is to provide an efficient solution to assist with appointment scheduling, treatment management, and financial tracking of the clinic.
 
-## Features
+## Diagrama do sistema.
 
-- Registration of patients with complete personal information
-- Scheduling of appointments between patients and dentists
-- Management of dentists' work schedules
-- Registration and description of different types of treatments
-- Generation of invoices for patients based on performed treatments
-- Recording of payments for invoices by patients
-
-## System Diagram
-![image](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/bdff8c94-742c-4a7c-af71-095caa430d9b)
+![image](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/b118371a-46ae-453e-8648-8b78e9e056a9)
 
 ## Documentation
+
 [For all documentation, please consult the documentation.md](documentation.md)
 
 ## Technologies Used
