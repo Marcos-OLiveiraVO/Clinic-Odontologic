@@ -18,7 +18,8 @@ The dental clinic system is a web application that allows the management of appo
 - Recording of payments for invoices by patients
 
 ## System Diagram
-![image](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/7a9fddb0-88c8-4a28-b74c-f8f07dfa392f)
+![image](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/e931a5b8-c8af-4f1a-ab75-69d1b473a2c6)
+
 
 
 
