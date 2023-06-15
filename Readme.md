@@ -8,12 +8,11 @@ O sistema de clínica odontológica é uma aplicação web que permite gerenciar
 
 ## Funcionalidades
 
-- Registro de pacientes com informações pessoais completas
-- Agendamento de consultas entre pacientes e dentistas
-- Gerenciamento de horários de trabalho dos dentistas
-- Cadastro e descrição de diferentes tipos de tratamentos
-- Geração de faturas para pacientes com base nos tratamentos realizados
-- Registro de pagamentos das faturas pelos pacientes
+- Registro e gerenciamento de pacientes
+- Agendamento e gerenciamento de consultas
+- Cadastro e descrição de tratamentos
+- Geração de faturas para pacientes
+- Registro e gerenciamento de pagamentos
 
 ## Diagrama do sistema. 
 
