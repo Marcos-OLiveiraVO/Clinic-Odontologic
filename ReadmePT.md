@@ -1,56 +1,62 @@
-# Dental Clinic System
+# Sistema de Clínica Odontológica
 
-This repository contains the source code for a dental clinic system developed using Node.js, TypeScript, and the NestJS framework.
+Este repositório contém o código-fonte para um sistema de clínica odontológica desenvolvido usando Node.js, TypeScript e o framework NestJS.
 
-[To a version of the readme in portuguese please acess.](Readme.md)
+## Descrição
 
-## Description
+O sistema de clínica odontológica é uma aplicação web que permite a gestão de consultas, pacientes, dentistas, tratamentos, faturas e pagamentos relacionados a uma clínica odontológica. O objetivo principal é fornecer uma solução eficiente para auxiliar no agendamento de consultas, gestão de tratamentos e acompanhamento financeiro da clínica.
 
-The dental clinic system is a web application that allows the management of appointments, patients, dentists, treatments, invoices, and payments related to a dental clinic. The main objective is to provide an efficient solution to assist with appointment scheduling, treatment management, and financial tracking of the clinic.
+## Recursos
 
-## Diagrama do sistema.
+- Registro e gestão de pacientes
+- Agendamento e gestão de consultas
+- Registro e descrição de tratamentos
+- Geração de faturas para pacientes
+- Registro e gestão de pagamentos
 
-![image](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/b118371a-46ae-453e-8648-8b78e9e056a9)
+## Diagrama do Sistema
+![image](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/e931a5b8-c8af-4f1a-ab75-69d1b473a2c6)
 
-## Documentation
+## Documentação
+[Para toda a documentação, consulte o documentation.md](documentation.md)
 
-[For all documentation, please consult the documentation.md](documentation.md)
+[Para uma versão da documentação em português, acesse.](documentationBR.md)
 
-## Technologies Used
+## Tecnologias Utilizadas
 
 - Node.js
 - TypeScript
 - NestJS
 
-## Prerequisites
+## Pré-requisitos
 
-- Node.js (version >= 16x)
-- Yarn (Node.js package manager)
+- Node.js (versão >= 16x)
+- Yarn (gerenciador de pacotes do Node.js)
 
-## Installation
+## Instalação
 
-1. Clone this repository to your local machine.
-2. Open the terminal and navigate to the root directory of the project.
-3. Run the command `yarn` to install the dependencies.
-4. Configure the necessary environment variables, such as database connection information.
-5. Run the command `yarn dev` to start the application.
+1. Clone este repositório em sua máquina local.
+2. Abra o terminal e navegue até o diretório raiz do projeto.
+3. Execute o comando `yarn` para instalar as dependências.
+4. Configure as variáveis de ambiente necessárias, como as informações de conexão com o banco de dados.
+5. Execute o comando `yarn dev` para iniciar a aplicação.
 
-## Contribution
+## Contribuição
 
-Contributions are welcome! If you would like to improve this project, follow the steps below:
+Contribuições são bem-vindas! Se você deseja melhorar este projeto, siga as etapas abaixo:
 
-1. Fork this repository.
-2. Create a branch for your feature: `git checkout -b my-feature`.
-3. Make the desired changes and commit them: `git commit -m 'My new feature'`.
-4. Push the changes to the remote repository: `git push origin my-feature`.
-5. Submit a pull request, describing the proposed changes.
+1. Faça um fork deste repositório.
+2. Crie um branch para sua funcionalidade: `git checkout -b minha-funcionalidade`.
+3. Faça as alterações desejadas e as commit: `git commit -m 'Minha nova funcionalidade'`.
+4. Envie as alterações para o repositório remoto: `git push origin minha-funcionalidade`.
+5. Envie uma pull request, descrevendo as alterações propostas.
 
-## License
+## Licença
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT).
 
-## Contact
+## Contato
 
-For more information or questions, please contact:
+Para mais informações ou dúvidas, entre em contato:
 
 Marcos Oliveira - [marcosoliveira.rd@gmail.com](mailto:marcosoliveira.rd@gmail.com)
