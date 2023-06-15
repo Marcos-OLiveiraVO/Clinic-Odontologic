@@ -19,7 +19,7 @@ The dental clinic system is a web application that allows the management of appo
 
 ## System Diagram
 <p align="center">
-  <img src="https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/22b44250-e52a-4fd5-9686-97bb8b7a60cf" alt="image" style="width: 400px; height: 400px;">
+  <img src="https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/22b44250-e52a-4fd5-9686-97bb8b7a60cf" alt="image" style="width: 300px; height: 400;">
 </p>
 
 
