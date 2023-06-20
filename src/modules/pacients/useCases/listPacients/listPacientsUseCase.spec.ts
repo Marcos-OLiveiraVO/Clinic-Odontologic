@@ -15,14 +15,17 @@ describe("List pacients", () => {
   });
 
   it("should be able to list all the pacients", async () => {
-    await createPatientUseCase.execute({
+    const patient = await createPatientUseCase.execute({
       name: "XXX",
       email: "XXX@gmail.com",
       phone: "XXX-XXX",
+      insurance_id: 2444,
     });
+
+    console.log(patient);
 
     const patients = await listPacientsUseCase.execute();
 
-    expect(patients).toHaveProperty("name");
+    expect(patients).toEqual([patient]);
   });
 });

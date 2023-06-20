@@ -13,8 +13,8 @@ class PacientRepository implements IPacientRepository {
     insurance_id,
     medical_history_id,
     medical_record_id,
-  }: IPacientCreateDTO): Promise<void> {
-    await prisma.patient.create({
+  }: IPacientCreateDTO): Promise<Patient> {
+    return await prisma.patient.create({
       data: {
         id,
         name,

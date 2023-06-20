@@ -15,9 +15,9 @@ model Patient {
   name               String   @unique
   email              String   @unique
   phone              String
-  insurance_id       Int
-  medical_history_id Int
-  medical_record_id  Int
+  insurance_id       Int?
+  medical_history_id Int?
+  medical_record_id  Int?
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
 }

@@ -7,7 +7,8 @@ class ListPacientsUseCase {
   constructor(private pacientsRepository: PacientRepository) {}
 
   async execute(): Promise<Patient[]> {
-    return this.pacientsRepository.listAll();
+    const patients = await this.pacientsRepository.listAll();
+    return patients;
   }
 }
 
