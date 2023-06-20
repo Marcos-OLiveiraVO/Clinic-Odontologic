@@ -1,7 +1,10 @@
-import { Pacient } from "@prisma/client";
+import { Patient } from "@prisma/client";
+import { IPacientCreateDTO } from "../dtos/ICreatePacientDTO";
 
 interface IPacientRepository {
-  listAll(): Promise<Pacient[]>;
+  create(data: IPacientCreateDTO): Promise<void>;
+  findByName(name: string): Promise<Patient>;
+  listAll(): Promise<Patient[]>;
 }
 
 export { IPacientRepository };

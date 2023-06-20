@@ -1,13 +1,13 @@
 interface IPacientCreateDTO {
-  id: string;
+  id?: number;
   name: string;
-  birthDate: Date;
-  address: Date;
-  phone: string;
   email: string;
-  medicalHistory: string;
-  created_At: Date;
-  updated_At: Date;
+  phone: string;
+  insurance_id?: number;
+  medical_history_id?: number;
+  medical_record_id?: number;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 export { IPacientCreateDTO };
