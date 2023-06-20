@@ -22,7 +22,7 @@ The Dental Clinic System offers the following key features:
 
 For comprehensive documentation, please refer to the [documentation.md](documentation.md) file.
 
-Para a versão da documentação em português, acesse [documentationBR.md](documentationBR.md).
+For the Portuguese version of the documentation, please refer to [documentationBR.md](documentationBR.md).
 
 ## Technologies Used
 
