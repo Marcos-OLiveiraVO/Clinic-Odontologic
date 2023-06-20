@@ -14,7 +14,7 @@ describe("List patients", () => {
     createPatientUseCase = new CreatePatientUseCase(patientRepositoryInMemory);
   });
 
-  it("should be able to list all the pacients", async () => {
+  it("should be able to list all the patients", async () => {
     const patient = await createPatientUseCase.execute({
       name: "XXX",
       email: "XXX@gmail.com",
