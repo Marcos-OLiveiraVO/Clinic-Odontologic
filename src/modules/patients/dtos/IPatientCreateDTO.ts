@@ -1,4 +1,4 @@
-interface IPacientCreateDTO {
+interface IPatientCreateDTO {
   id?: number;
   name: string;
   email: string;
@@ -10,4 +10,4 @@ interface IPacientCreateDTO {
   updatedAt?: Date;
 }
 
-export { IPacientCreateDTO };
+export { IPatientCreateDTO };

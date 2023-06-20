@@ -1,9 +1,9 @@
 import { Patient } from "@prisma/client";
-import { IPacientRepository } from "../IPacientRepository";
-import { IPacientCreateDTO } from "@modules/pacients/dtos/ICreatePacientDTO";
 import { v4 as uuidV4 } from "uuid";
+import { IPatientRepository } from "../IPatientRepository";
+import { IPatientCreateDTO } from "modules/patients/dtos/IPatientCreateDTO";
 
-class PacientRepositoryInMemory implements IPacientRepository {
+class PatientRepositoryInMemory implements IPatientRepository {
   patient: Patient[] = [];
 
   async create({
@@ -15,7 +15,7 @@ class PacientRepositoryInMemory implements IPacientRepository {
     medical_record_id,
     createdAt,
     updatedAt,
-  }: IPacientCreateDTO): Promise<Patient> {
+  }: IPatientCreateDTO): Promise<Patient> {
     const newPatient: Patient = {
       id: uuidV4(),
       name,
@@ -42,4 +42,4 @@ class PacientRepositoryInMemory implements IPacientRepository {
   }
 }
 
-export { PacientRepositoryInMemory };
+export { PatientRepositoryInMemory };

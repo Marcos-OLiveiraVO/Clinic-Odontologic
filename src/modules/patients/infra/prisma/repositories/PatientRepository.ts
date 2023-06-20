@@ -1,10 +1,11 @@
-import { IPacientCreateDTO } from "@modules/pacients/dtos/ICreatePacientDTO";
-import { IPacientRepository } from "@modules/pacients/repositories/IPacientRepository";
 import { Patient, PrismaClient } from "@prisma/client";
+
+import { IPatientCreateDTO } from "modules/patients/dtos/IPatientCreateDTO";
+import { IPatientRepository } from "modules/patients/repositories/IPatientRepository";
 
 const prisma = new PrismaClient();
 
-class PacientRepository implements IPacientRepository {
+class PatientRepository implements IPatientRepository {
   async create({
     id,
     name,
@@ -13,7 +14,7 @@ class PacientRepository implements IPacientRepository {
     insurance_id,
     medical_history_id,
     medical_record_id,
-  }: IPacientCreateDTO): Promise<Patient> {
+  }: IPatientCreateDTO): Promise<Patient> {
     return await prisma.patient.create({
       data: {
         id,
@@ -42,4 +43,4 @@ class PacientRepository implements IPacientRepository {
   }
 }
 
-export { PacientRepository };
+export { PatientRepository };

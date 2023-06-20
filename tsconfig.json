@@ -12,10 +12,10 @@
     "rootDir": "./",
     "baseUrl": "./src",
     "paths": {
-      "@modules/*": ["modules/*"],
-      "@config/*": ["config/*"],
-      "@shared/*": ["shared/*"],
-      "@errors/*": ["errors/*"]
+      "@modules/*": ["src/modules/*"],
+      "@config/*": ["src/config/*"],
+      "@shared/*": ["src/shared/*"],
+      "@errors/*": ["shared/errors/*"]
     },
     "incremental": true,
     "skipLibCheck": true,
