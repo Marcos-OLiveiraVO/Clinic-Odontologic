@@ -28,10 +28,10 @@ class PatientRepository implements IPatientRepository {
     });
   }
 
-  async findByName(name: string): Promise<Patient> {
+  async findByEmail(email: string): Promise<Patient> {
     const patient = await prisma.patient.findFirst({
       where: {
-        name,
+        email,
       },
     });
 
