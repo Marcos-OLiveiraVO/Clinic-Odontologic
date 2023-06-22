@@ -37,8 +37,8 @@ class PatientRepositoryInMemory implements IPatientRepository {
     return this.patient;
   }
 
-  async findByName(name: string): Promise<Patient> {
-    return this.patient.find((patient) => patient.name === name);
+  async findByEmail(email: string): Promise<Patient> {
+    return this.patient.find((patient) => patient.email === email);
   }
 }
 
