@@ -9,7 +9,9 @@ class CreatePatientUseCase {
   constructor(private patientRepository: PatientRepository) {}
 
   async execute({ name, email, phone }: IPatientCreateDTO) {
-    const patientAlreadyExists = await this.patientRepository.findByName(name);
+    const patientAlreadyExists = await this.patientRepository.findByEmail(
+      email
+    );
 
     if (patientAlreadyExists) {
       throw new AppError("Patient Already exists!");
