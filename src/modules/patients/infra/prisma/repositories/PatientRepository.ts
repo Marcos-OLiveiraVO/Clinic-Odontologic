@@ -41,6 +41,17 @@ class PatientRepository implements IPatientRepository {
   async listAll(): Promise<Patient[]> {
     return await prisma.patient.findMany();
   }
+
+  async update(email: string, name: string): Promise<Patient> {
+    const patient = await prisma.patient.update({
+      where: {
+        email,
+      },
+      data: { name, email },
+    });
+
+    return patient;
+  }
 }
 
 export { PatientRepository };

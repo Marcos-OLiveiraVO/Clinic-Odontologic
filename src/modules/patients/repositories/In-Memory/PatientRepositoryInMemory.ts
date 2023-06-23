@@ -40,6 +40,15 @@ class PatientRepositoryInMemory implements IPatientRepository {
   async findByEmail(email: string): Promise<Patient> {
     return this.patient.find((patient) => patient.email === email);
   }
+
+  async update(name: string, email: string): Promise<Patient> {
+    const patient = this.patient.find((patient) => patient.email === email);
+
+    patient.name = name;
+    patient.updatedAt = new Date();
+
+    return patient;
+  }
 }
 
 export { PatientRepositoryInMemory };
