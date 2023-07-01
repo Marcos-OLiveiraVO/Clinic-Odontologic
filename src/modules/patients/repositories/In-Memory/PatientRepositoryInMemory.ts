@@ -49,6 +49,13 @@ class PatientRepositoryInMemory implements IPatientRepository {
 
     return patient;
   }
+
+  async remove(email: string): Promise<void> {
+    const index = this.patient.findIndex((patient) => patient.email === email);
+    if (index !== -1) {
+      this.patient.splice(index, 1);
+    }
+  }
 }
 
 export { PatientRepositoryInMemory };

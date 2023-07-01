@@ -3,3 +3,6 @@ node_modules
 UseCases.md
 dist
 .env
+.yarn
+.yarnrc.yml
+

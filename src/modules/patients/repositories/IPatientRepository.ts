@@ -6,6 +6,7 @@ interface IPatientRepository {
   findByEmail(email: string): Promise<Patient>;
   listAll(): Promise<Patient[]>;
   update(name: string, email: string): Promise<Patient>;
+  remove(email: string): Promise<void>;
 }
 
 export { IPatientRepository };
