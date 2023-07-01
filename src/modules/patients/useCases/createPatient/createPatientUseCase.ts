@@ -8,7 +8,7 @@ import { IPatientCreateDTO } from "modules/patients/dtos/IPatientCreateDTO";
 class CreatePatientUseCase {
   constructor(private patientRepository: PatientRepository) {}
 
-  async execute({ name, email, phone }: IPatientCreateDTO) {
+  async execute({ name, email, phone, insurance_id }: IPatientCreateDTO) {
     const patientAlreadyExists = await this.patientRepository.findByEmail(
       email
     );
@@ -21,6 +21,7 @@ class CreatePatientUseCase {
       name,
       email,
       phone,
+      insurance_id,
     });
 
     return patient;
