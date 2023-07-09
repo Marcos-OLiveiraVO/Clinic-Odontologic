@@ -5,7 +5,7 @@ import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
 class ShowProfileAdminUseCase {
   constructor(private adminRepository: IAdminRepository) {}
 
-  async execute(email: string) {
+  async execute(email: string): Promise<Admin> {
     const adminExists = await this.adminRepository.findByEmail(email);
 
     if (!adminExists) {
