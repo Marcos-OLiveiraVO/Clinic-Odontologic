@@ -2,6 +2,7 @@ import { AdminRepositoryInMemory } from "modules/admin/repositories/InMemory/Adm
 import { beforeAll, describe, expect, it } from "vitest";
 import { CreateAdminUseCase } from "../createAdmin/createAdminUseCase";
 import { ShowProfileAdminUseCase } from "./showProfileAdminUseCase";
+import { AppError } from "@errors/appError";
 
 let showProfileAdminUseCase: ShowProfileAdminUseCase;
 let createAdminUseCase: CreateAdminUseCase;
@@ -36,5 +37,18 @@ describe("Show Admin Profile", async () => {
     expect(adminProfile.name).toEqual(admin.name);
     expect(adminProfile.username).toEqual(admin.username);
     expect(adminProfile.email).toEqual(admin.email);
+  });
+
+  it("should not be able to show admin profile if email or account not exists", async () => {
+    const admin = {
+      name: "admin",
+      username: "admin1",
+      email: "admin@test.com",
+      password: "admin1234",
+    };
+
+    await expect(showProfileAdminUseCase.execute(admin.email)).rejects.toEqual(
+      new AppError("Email or account not exists!")
+    );
   });
 });

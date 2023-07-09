@@ -9,7 +9,7 @@ class ShowProfileAdminUseCase {
     const adminExists = await this.adminRepository.findByEmail(email);
 
     if (!adminExists) {
-      throw new AppError("email or account not exists!");
+      throw new AppError("Email or account not exists!");
     }
 
     return AdminMapper.ToDTO(adminExists);
