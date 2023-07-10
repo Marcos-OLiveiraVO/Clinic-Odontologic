@@ -4,7 +4,7 @@ import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
 class RemoveAdminUseCase {
   constructor(private adminRepository: IAdminRepository) {}
 
-  async execute(email: string) {
+  async execute(email: string): Promise<void> {
     const admin = await this.adminRepository.findByEmail(email);
 
     if (!admin) {
