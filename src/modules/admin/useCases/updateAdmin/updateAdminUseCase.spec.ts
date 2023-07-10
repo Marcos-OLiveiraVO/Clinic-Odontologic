@@ -2,6 +2,7 @@ import { AdminRepositoryInMemory } from "modules/admin/repositories/InMemory/Adm
 import { CreateAdminUseCase } from "../createAdmin/createAdminUseCase";
 import { UpdateAdminUseCase } from "./updateAdminUseCase";
 import { beforeAll, describe, expect, it } from "vitest";
+import { AppError } from "@errors/appError";
 
 let createAdminUseCase: CreateAdminUseCase;
 let updateAdminUseCase: UpdateAdminUseCase;
@@ -33,5 +34,17 @@ describe("Update Admin", async () => {
     });
 
     expect(updateAdmin.id).toBe(admin.id);
+  });
+
+  it("should not be able to update a non exist admin", async () => {
+    await expect(
+      updateAdminUseCase.execute({
+        newName: "new adminName",
+        newUsername: "admin2",
+        originalEmail: "admin@mail.com",
+        newEmail: "newAdmin2@mail.com",
+        newPassword: "66666",
+      })
+    ).rejects.toEqual(new AppError("Email or account not exists!"));
   });
 });
