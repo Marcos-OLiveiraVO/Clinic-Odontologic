@@ -19,7 +19,7 @@ class UpdateAdminUseCase {
     originalEmail,
     newEmail,
     newPassword,
-  }: IUpdateAdminRequest) {
+  }: IUpdateAdminRequest): Promise<Admin> {
     let admin = await this.adminRepository.findByEmail(originalEmail);
 
     if (!admin) {
