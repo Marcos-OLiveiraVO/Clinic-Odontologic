@@ -35,6 +35,24 @@ class AdminRepositoryInMemory implements IAdminRepository {
 
     return admin;
   }
+
+  update(
+    newName: string,
+    newUsername: string,
+    originalEmail: string,
+    newEmail: string,
+    newPassword: string
+  ): Promise<Admin> {
+    const admin = this.admins.find((admin) => admin.email === originalEmail);
+
+    admin.name = newName;
+    admin.username = newUsername;
+    admin.email = newEmail;
+    admin.password = newPassword;
+    admin.updateAt = new Date();
+
+    return admin;
+  }
 }
 
 export { AdminRepositoryInMemory };
