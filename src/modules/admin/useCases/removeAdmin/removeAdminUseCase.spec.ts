@@ -2,6 +2,7 @@ import { AdminRepositoryInMemory } from "modules/admin/repositories/InMemory/Adm
 import { CreateAdminUseCase } from "../createAdmin/createAdminUseCase";
 import { beforeAll, expect, it, describe } from "vitest";
 import { RemoveAdminUseCase } from "./removeAdminUseCase";
+import { AppError } from "@errors/appError";
 
 let adminRepository: AdminRepositoryInMemory;
 let removeAdminUseCase: RemoveAdminUseCase;
@@ -27,5 +28,13 @@ describe("Remove admin", async () => {
     const adminBeRemoved = await removeAdminUseCase.execute(admin.email);
 
     expect(adminBeRemoved).toBeUndefined();
+  });
+
+  it("should not be able to remove a non exists admin", async () => {
+    const email = "admin@mail.com";
+
+    await expect(removeAdminUseCase.execute(email)).rejects.toEqual(
+      new AppError("Admin or account not exists!")
+    );
   });
 });
