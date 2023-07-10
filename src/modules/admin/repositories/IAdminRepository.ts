@@ -10,6 +10,7 @@ interface IAdminRepository {
     newEmail: string,
     newPassword: string
   ): Promise<Admin>;
+  remove(email: string): Promise<void>;
 }
 
 export { IAdminRepository };

@@ -36,7 +36,7 @@ class AdminRepositoryInMemory implements IAdminRepository {
     return admin;
   }
 
-  update(
+  async update(
     newName: string,
     newUsername: string,
     originalEmail: string,
@@ -52,6 +52,13 @@ class AdminRepositoryInMemory implements IAdminRepository {
     admin.updateAt = new Date();
 
     return admin;
+  }
+
+  async remove(email: string): Promise<void> {
+    const index = this.admins.findIndex((admin) => admin.email === email);
+    if (index !== -1) {
+      this.admins.splice(index, 1);
+    }
   }
 }
 
