@@ -1,14 +1,7 @@
 import { AppError } from "@errors/appError";
 import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
+import { IUpdateAdminRequestDTO } from "modules/admin/dtos/IUpdateAdminRequestDTO";
 import { hash } from "bcrypt";
-
-interface IUpdateAdminRequest {
-  newName: string;
-  newUsername: string;
-  originalEmail: string;
-  newEmail: string;
-  newPassword: string;
-}
 
 class UpdateAdminUseCase {
   constructor(private adminRepository: IAdminRepository) {}
@@ -19,7 +12,7 @@ class UpdateAdminUseCase {
     originalEmail,
     newEmail,
     newPassword,
-  }: IUpdateAdminRequest): Promise<Admin> {
+  }: IUpdateAdminRequestDTO): Promise<Admin> {
     let admin = await this.adminRepository.findByEmail(originalEmail);
 
     if (!admin) {
