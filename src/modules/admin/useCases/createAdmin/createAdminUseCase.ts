@@ -2,6 +2,7 @@ import { AppError } from "@errors/appError";
 import { ICreateAdminDTO } from "modules/admin/dtos/ICreateAdminDTO";
 import { hash } from "bcrypt";
 import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
+import { Admin } from "@prisma/client";
 
 class CreateAdminUseCase {
   constructor(private adminRepository: IAdminRepository) {}

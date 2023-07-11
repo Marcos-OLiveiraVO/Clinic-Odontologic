@@ -4,8 +4,8 @@ interface ICreateAdminDTO {
   username: string;
   email: string;
   password: string;
-  created_at?: Date;
-  updated_At?: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 export { ICreateAdminDTO };

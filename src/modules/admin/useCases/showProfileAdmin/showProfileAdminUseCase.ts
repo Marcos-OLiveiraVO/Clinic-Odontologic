@@ -1,11 +1,12 @@
 import { AppError } from "@errors/appError";
+import { IResponseAdminDTO } from "modules/admin/dtos/IResponseAdminDTO";
 import { AdminMapper } from "modules/admin/mapper/AdminMapper";
 import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
 
 class ShowProfileAdminUseCase {
   constructor(private adminRepository: IAdminRepository) {}
 
-  async execute(email: string): Promise<Admin> {
+  async execute(email: string): Promise<IResponseAdminDTO> {
     const adminExists = await this.adminRepository.findByEmail(email);
 
     if (!adminExists) {
