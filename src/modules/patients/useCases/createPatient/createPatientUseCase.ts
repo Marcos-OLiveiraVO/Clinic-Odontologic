@@ -1,14 +1,20 @@
 import { Injectable } from "@nestjs/common";
 import { AppError } from "../../../../shared/errors/appError";
 
-import { PatientRepository } from "modules/patients/infra/prisma/repositories/PatientRepository";
 import { IPatientCreateDTO } from "modules/patients/dtos/IPatientCreateDTO";
+import { Patient } from "@prisma/client";
+import { IPatientRepository } from "modules/patients/repositories/IPatientRepository";
 
 @Injectable()
 class CreatePatientUseCase {
-  constructor(private patientRepository: PatientRepository) {}
+  constructor(private patientRepository: IPatientRepository) {}
 
-  async execute({ name, email, phone, insurance_id }: IPatientCreateDTO) {
+  async execute({
+    name,
+    email,
+    phone,
+    insurance_id,
+  }: IPatientCreateDTO): Promise<Patient> {
     const patientAlreadyExists = await this.patientRepository.findByEmail(
       email
     );

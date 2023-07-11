@@ -1,7 +1,9 @@
 import { Patient } from "@prisma/client";
 import { v4 as uuidV4 } from "uuid";
+
 import { IPatientRepository } from "../IPatientRepository";
 import { IPatientCreateDTO } from "modules/patients/dtos/IPatientCreateDTO";
+import { IPatientRequestUpdateDTO } from "modules/patients/dtos/IPatientRequestUpdateDTO";
 
 class PatientRepositoryInMemory implements IPatientRepository {
   patient: Patient[] = [];
@@ -41,10 +43,23 @@ class PatientRepositoryInMemory implements IPatientRepository {
     return this.patient.find((patient) => patient.email === email);
   }
 
-  async update(name: string, email: string): Promise<Patient> {
-    const patient = this.patient.find((patient) => patient.email === email);
+  async update({
+    newName,
+    originalEmail,
+    newEmail,
+    new_insurance_id,
+    new_medical_history_id,
+    new_medical_record_id,
+  }: IPatientRequestUpdateDTO): Promise<Patient> {
+    const patient = this.patient.find(
+      (patient) => patient.email === originalEmail
+    );
 
-    patient.name = name;
+    patient.name = newName;
+    patient.email = newEmail;
+    patient.insurance_id = new_insurance_id;
+    patient.medical_history_id = new_medical_history_id ?? undefined;
+    patient.medical_record_id = new_medical_record_id ?? undefined;
     patient.updatedAt = new Date();
 
     return patient;

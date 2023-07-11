@@ -1,11 +1,11 @@
-import { Injectable } from "@nestjs/common";
 import { Patient } from "@prisma/client";
+import { Injectable } from "@nestjs/common";
 
-import { PatientRepository } from "modules/patients/infra/prisma/repositories/PatientRepository";
+import { IPatientRepository } from "modules/patients/repositories/IPatientRepository";
 
 @Injectable()
 class ListPatientsUseCase {
-  constructor(private patientRepository: PatientRepository) {}
+  constructor(private patientRepository: IPatientRepository) {}
 
   async execute(): Promise<Patient[]> {
     const patients = await this.patientRepository.listAll();

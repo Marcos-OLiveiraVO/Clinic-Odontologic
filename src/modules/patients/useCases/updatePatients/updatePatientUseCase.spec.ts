@@ -18,14 +18,18 @@ describe("Update Patient", async () => {
   it("should be able to update the patient", async () => {
     const patient = await createPatientUseCase.execute({
       name: "XXX",
-      email: "sameEmail@gmail.com",
+      email: "sameEmail@mail.com",
       phone: "XXX-XXX",
       insurance_id: 5555,
     });
 
     const updatedPatient = await updatePatientUseCase.execute({
-      name: "new XXX",
-      email: "sameEmail@gmail.com",
+      newName: "Cleiton",
+      originalEmail: "sameEmail@mail.com",
+      newEmail: "patient@gmail.com",
+      new_insurance_id: 6666,
+      new_medical_history_id: null,
+      new_medical_record_id: null,
     });
 
     expect(updatedPatient.id).toBe(patient.id);
@@ -34,9 +38,13 @@ describe("Update Patient", async () => {
   it("should not be able to update a non exists patient", async () => {
     await expect(
       updatePatientUseCase.execute({
-        name: "XXXX",
-        email: "XXX@mail.com",
+        newName: "Cleiton",
+        originalEmail: "sameEmail@gmail.com",
+        newEmail: "patient@gmail.com",
+        new_insurance_id: 7777,
+        new_medical_history_id: null,
+        new_medical_record_id: null,
       })
-    ).rejects.toEqual(new AppError("Patient not found."));
+    ).rejects.toEqual(new AppError("Patient not found"));
   });
 });
