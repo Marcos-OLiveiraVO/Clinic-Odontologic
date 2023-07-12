@@ -2,6 +2,7 @@ import { ManagerRepositoryInMemory } from "modules/managers/repositories/In-Memo
 import { CreateManagerUseCase } from "../createManager/createManagerUseCase";
 import { beforeAll, describe, expect, it } from "vitest";
 import { UpdateManagerUseCase } from "./updateManagerUseCase";
+import { AppError } from "@errors/appError";
 
 let createManagerUseCase: CreateManagerUseCase;
 let managerRepository: ManagerRepositoryInMemory;
@@ -31,5 +32,17 @@ describe("Update Manager", async () => {
     });
 
     expect(managerUpdated.id).toEqual(manager.id);
+  });
+
+  it("should not be able to update a non exists manager", async () => {
+    await expect(
+      updateManagerUseCase.execute({
+        originalEmail: "managerTest@gmail.com",
+        newName: "newManager",
+        newEmail: "managerTest2@mail.com",
+        newPassword: "123456",
+        newPhone: "XXX-XXX-XXX-XXX",
+      })
+    ).rejects.toEqual(new AppError("Manager Account or email not exists!"));
   });
 });
