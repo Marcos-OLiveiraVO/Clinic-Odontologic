@@ -1,0 +1,8 @@
+interface IResponseManagerDTO {
+  name: string;
+  email: string;
+  phone: string;
+  password: string;
+}
+
+export { IResponseManagerDTO };
