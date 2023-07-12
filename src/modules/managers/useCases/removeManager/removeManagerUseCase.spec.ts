@@ -2,6 +2,7 @@ import { ManagerRepositoryInMemory } from "modules/managers/repositories/In-Memo
 import { CreateManagerUseCase } from "../createManager/createManagerUseCase";
 import { beforeAll, it, describe, expect } from "vitest";
 import { RemoveManagerUseCase } from "./removeManagerUseCase";
+import { AppError } from "@errors/appError";
 
 let createManagerUseCase: CreateManagerUseCase;
 let managerRepository: ManagerRepositoryInMemory;
@@ -25,5 +26,13 @@ describe("Remove manager", async () => {
     const managerRemoved = await removeManagerUseCase.execute(manager.email);
 
     expect(managerRemoved).toBeUndefined();
+  });
+
+  it("should not be able to remove a non exists manager", async () => {
+    const email = "managerTest@mail.com";
+
+    await expect(removeManagerUseCase.execute(email)).rejects.toEqual(
+      new AppError("Manager account or email not exists!")
+    );
   });
 });
