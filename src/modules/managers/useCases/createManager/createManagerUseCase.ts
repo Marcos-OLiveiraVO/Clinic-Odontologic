@@ -16,7 +16,7 @@ class CreateManagerUseCase {
     const adminAlreadyExists = await this.manageRepository.findByEmail(email);
 
     if (adminAlreadyExists) {
-      throw new AppError("account admin or email not exists!");
+      throw new AppError("Account admin or email not exists!");
     }
 
     const hashedPassword = await hash(password, 6);
