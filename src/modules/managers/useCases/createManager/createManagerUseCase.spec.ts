@@ -17,7 +17,6 @@ describe("Create manager", async () => {
       email: "managerTest@mail.com",
       password: "1234",
       phone: "XXX-XXX-XXX-XXX",
-      authorization_level: "admin",
     });
 
     expect(manager).toHaveProperty("id");

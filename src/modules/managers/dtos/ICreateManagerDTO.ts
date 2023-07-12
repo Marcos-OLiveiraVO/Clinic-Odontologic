@@ -3,7 +3,7 @@ interface ICreateManagerDTO {
   email: string;
   password: string;
   phone?: string;
-  authorization_level: string;
+  authorization_level?: string;
   createdAt?: Date;
   updatedAt?: Date;
 }

@@ -20,7 +20,6 @@ describe("Remove manager", async () => {
       email: "managerTest@mail.com",
       password: "1234",
       phone: "XXX-XXX-XXX-XXX",
-      authorization_level: "admin",
     });
 
     const managerRemoved = await removeManagerUseCase.execute(manager.email);
