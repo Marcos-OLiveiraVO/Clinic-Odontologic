@@ -2,6 +2,7 @@ import { ICreateManagerDTO } from "modules/managers/dtos/ICreateManagerDTO";
 import { IManagerRepository } from "../IManagerRepository";
 import { Manager } from "@prisma/client";
 import { v4 as uuidV4 } from "uuid";
+import { IUpdateRequestManager } from "modules/managers/dtos/IUpdateRequestManager";
 
 class ManagerRepositoryInMemory implements IManagerRepository {
   manager: Manager[] = [];
@@ -45,6 +46,25 @@ class ManagerRepositoryInMemory implements IManagerRepository {
     if (index !== -1) {
       this.manager.splice(index, 1);
     }
+  }
+
+  async update({
+    originalEmail,
+    newEmail,
+    newName,
+    newPassword,
+    newPhone,
+  }: IUpdateRequestManager): Promise<Manager> {
+    const manager = this.manager.find(
+      (manager) => manager.email === originalEmail
+    );
+
+    manager.name = newName;
+    manager.email = newEmail;
+    manager.password = newPassword;
+    manager.phone = newPhone;
+
+    return manager;
   }
 }
 
