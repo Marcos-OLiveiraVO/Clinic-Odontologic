@@ -38,6 +38,14 @@ class ManagerRepositoryInMemory implements IManagerRepository {
 
     return manager;
   }
+
+  async remove(email: string): Promise<void> {
+    const index = this.manager.findIndex((manager) => manager.email === email);
+
+    if (index !== -1) {
+      this.manager.splice(index, 1);
+    }
+  }
 }
 
 export { ManagerRepositoryInMemory };
