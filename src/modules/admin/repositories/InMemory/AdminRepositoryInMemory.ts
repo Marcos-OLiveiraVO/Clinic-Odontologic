@@ -1,8 +1,8 @@
 import { ICreateAdminDTO } from "modules/admin/dtos/ICreateAdminDTO";
 import { IAdminRepository } from "../IAdminRepository";
-import { v4 as uuidV4 } from "uuid";
-import { IUpdateAdminRequestDTO } from "modules/admin/dtos/IUpdateAdminRequestDTO";
 import { Admin } from "@prisma/client";
+import { IAdminUpdateRequestDTO } from "modules/admin/dtos/IAdminUpdateRequestDTO";
+import { v4 as uuidV4 } from "uuid";
 
 class AdminRepositoryInMemory implements IAdminRepository {
   admins: Admin[] = [];
@@ -41,7 +41,7 @@ class AdminRepositoryInMemory implements IAdminRepository {
     originalEmail,
     newEmail,
     newPassword,
-  }: IUpdateAdminRequestDTO): Promise<Admin> {
+  }: IAdminUpdateRequestDTO): Promise<Admin> {
     const admin = this.admins.find((admin) => admin.email === originalEmail);
 
     admin.name = newName;

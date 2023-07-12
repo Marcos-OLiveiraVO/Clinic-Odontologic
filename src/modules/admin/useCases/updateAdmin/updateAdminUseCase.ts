@@ -1,8 +1,9 @@
 import { AppError } from "@errors/appError";
 import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
-import { IUpdateAdminRequestDTO } from "modules/admin/dtos/IUpdateAdminRequestDTO";
+
 import { hash } from "bcrypt";
 import { Admin } from "@prisma/client";
+import { IAdminUpdateRequestDTO } from "modules/admin/dtos/IAdminUpdateRequestDTO";
 
 class UpdateAdminUseCase {
   constructor(private adminRepository: IAdminRepository) {}
@@ -13,7 +14,7 @@ class UpdateAdminUseCase {
     originalEmail,
     newEmail,
     newPassword,
-  }: IUpdateAdminRequestDTO): Promise<Admin> {
+  }: IAdminUpdateRequestDTO): Promise<Admin> {
     let admin = await this.adminRepository.findByEmail(originalEmail);
 
     if (!admin) {
