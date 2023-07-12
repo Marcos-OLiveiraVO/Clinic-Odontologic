@@ -2,6 +2,7 @@ import { AppError } from "@errors/appError";
 import { ICreateManagerDTO } from "modules/managers/dtos/ICreateManagerDTO";
 import { IManagerRepository } from "modules/managers/repositories/IManagerRepository";
 import { hash } from "bcrypt";
+import { Manager } from "@prisma/client";
 
 class CreateManagerUseCase {
   constructor(private manageRepository: IManagerRepository) {}
@@ -12,7 +13,7 @@ class CreateManagerUseCase {
     password,
     phone,
     updatedAt,
-  }: ICreateManagerDTO) {
+  }: ICreateManagerDTO): Promise<Manager> {
     const adminAlreadyExists = await this.manageRepository.findByEmail(email);
 
     if (adminAlreadyExists) {
