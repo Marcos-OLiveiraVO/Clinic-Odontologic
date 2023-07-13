@@ -26,6 +26,7 @@ class CreateAdminUseCase {
       username,
       email,
       password: createHashedPassword,
+      authorization_level: "admin",
     });
 
     return admin;

@@ -4,6 +4,7 @@ interface ICreateAdminDTO {
   username: string;
   email: string;
   password: string;
+  authorization_level?: string;
   createdAt?: Date;
   updatedAt?: Date;
 }

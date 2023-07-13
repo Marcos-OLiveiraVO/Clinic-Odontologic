@@ -13,6 +13,7 @@ class AdminRepositoryInMemory implements IAdminRepository {
     email,
     password,
     updatedAt,
+    authorization_level,
   }: ICreateAdminDTO): Promise<Admin> {
     const admin = {
       id: uuidV4(),
@@ -21,6 +22,7 @@ class AdminRepositoryInMemory implements IAdminRepository {
       email,
       password,
       createdAt: new Date(),
+      authorization_level,
       updatedAt: updatedAt ?? null,
     };
 
