@@ -28,7 +28,7 @@ class CreateManagerUseCase {
       password: hashedPassword,
       createdAt: new Date(),
       phone,
-      authorization_level: "admin",
+      authorization_level: "manager",
       updatedAt,
     });
 
