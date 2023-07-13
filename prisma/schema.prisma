@@ -11,15 +11,16 @@ datasource db {
 }
 
 model Patient {
-  id                 Int      @id @default(autoincrement())
-  name               String   @unique
-  email              String   @unique
-  phone              String
-  insurance_id       Int?
-  medical_history_id Int?
-  medical_record_id  Int?
-  createdAt          DateTime @default(now())
-  updatedAt          DateTime @updatedAt
+  id                  Int      @id @default(autoincrement())
+  name                String   @unique
+  email               String   @unique
+  phone               String
+  insurance_id        Int?
+  medical_history_id  Int?
+  medical_record_id   Int?
+  authorization_level String
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
 }
 
 model Admin {

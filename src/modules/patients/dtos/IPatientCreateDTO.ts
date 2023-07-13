@@ -6,6 +6,7 @@ interface IPatientCreateDTO {
   insurance_id?: number;
   medical_history_id?: number;
   medical_record_id?: number;
+  authorization_level?: string;
   createdAt?: Date;
   updatedAt?: Date;
 }

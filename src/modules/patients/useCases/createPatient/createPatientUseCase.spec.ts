@@ -21,6 +21,8 @@ describe("Create Patient", () => {
       insurance_id: 5555,
     });
 
+    console.log(patient);
+
     expect(patient).toHaveProperty("id");
   });
 

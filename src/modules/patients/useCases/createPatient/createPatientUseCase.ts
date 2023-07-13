@@ -28,6 +28,7 @@ class CreatePatientUseCase {
       email,
       phone,
       insurance_id,
+      authorization_level: "patient",
     });
 
     return patient;

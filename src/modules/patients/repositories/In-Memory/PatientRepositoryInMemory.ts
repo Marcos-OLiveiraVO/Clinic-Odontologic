@@ -17,6 +17,7 @@ class PatientRepositoryInMemory implements IPatientRepository {
     medical_record_id,
     createdAt,
     updatedAt,
+    authorization_level,
   }: IPatientCreateDTO): Promise<Patient> {
     const newPatient: Patient = {
       id: uuidV4(),
@@ -26,6 +27,7 @@ class PatientRepositoryInMemory implements IPatientRepository {
       insurance_id: insurance_id ?? undefined,
       medical_history_id: medical_history_id ?? undefined,
       medical_record_id: medical_record_id ?? undefined,
+      authorization_level,
       createdAt: createdAt ?? new Date(),
       updatedAt: updatedAt ?? undefined,
     };
