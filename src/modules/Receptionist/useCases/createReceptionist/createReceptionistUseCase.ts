@@ -1,7 +1,7 @@
 import { AppError } from "@errors/appError";
 import { Receptionist } from "@prisma/client";
 import { hash } from "bcrypt";
-import { IReceptionistRepository } from "../repositories/IReceptionistRepository";
+import { IReceptionistRepository } from "modules/Receptionist/repositories/IReceptionistRepository";
 
 class CreateReceptionistUseCase {
   constructor(private receptionistRepository: IReceptionistRepository) {}
