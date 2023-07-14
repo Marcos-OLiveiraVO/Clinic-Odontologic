@@ -13,7 +13,7 @@ class PatientMap {
       name,
       email,
       phone,
-      insurance_id: insurance_id ?? null,
+      insurance_id,
     });
     return patient;
   }
