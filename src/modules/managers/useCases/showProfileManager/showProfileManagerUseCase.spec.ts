@@ -2,6 +2,7 @@ import { ManagerRepositoryInMemory } from "modules/managers/repositories/In-Memo
 import { beforeAll, describe, expect, it } from "vitest";
 import { CreateManagerUseCase } from "../createManager/createManagerUseCase";
 import { ShowProfileManagerUseCase } from "./showProfileManagerUseCase";
+import { AppError } from "@errors/appError";
 
 let managerRepository: ManagerRepositoryInMemory;
 let createManagerUseCase: CreateManagerUseCase;
@@ -29,5 +30,13 @@ describe("Show Profile Manager", async () => {
     );
 
     expect(managerProfile.name).toBe(manager.name);
+  });
+
+  it("should not be able to show profile for non exists manager", async () => {
+    const email = "managerTest@mail.com";
+
+    await expect(showProfileManagerUseCase.execute(email)).rejects.toEqual(
+      new AppError("Manager account or email not exists!")
+    );
   });
 });
