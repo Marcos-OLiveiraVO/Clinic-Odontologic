@@ -2,6 +2,7 @@ import { ReceptionistRepositoryInMemory } from "modules/Receptionist/repositorie
 import { CreateReceptionistUseCase } from "../createReceptionist/createReceptionistUseCase";
 import { beforeAll, describe, it, expect } from "vitest";
 import { RemoveReceptionistUseCase } from "./removeReceptionistUseCase";
+import { AppError } from "@errors/appError";
 
 let receptionistRepository: ReceptionistRepositoryInMemory;
 let createReceptionistUseCase: CreateReceptionistUseCase;
@@ -33,5 +34,13 @@ describe("Remove Receptionist", async () => {
     );
 
     expect(receptionistRemoved).toBeUndefined();
+  });
+
+  it("should not be able to remove a non exists receptionist", async () => {
+    const email = "jessicaTest@mail.com";
+
+    await expect(removeReceptionistUseCase.execute(email)).rejects.toEqual(
+      new AppError("Receptionist account or email not exists!")
+    );
   });
 });
