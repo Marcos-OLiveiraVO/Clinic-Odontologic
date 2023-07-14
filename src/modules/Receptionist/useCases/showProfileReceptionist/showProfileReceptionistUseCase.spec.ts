@@ -2,6 +2,7 @@ import { ReceptionistRepositoryInMemory } from "modules/Receptionist/repositorie
 import { CreateReceptionistUseCase } from "../createReceptionist/createReceptionistUseCase";
 import { beforeAll, describe, it, expect } from "vitest";
 import { ShowProfileReceptionistUseCase } from "./showProfileReceptionistUseCase";
+import { AppError } from "@errors/appError";
 
 let receptionistRepository: ReceptionistRepositoryInMemory;
 let createReceptionistUseCase: CreateReceptionistUseCase;
@@ -36,5 +37,13 @@ describe("Show Receptionist profile", async () => {
     expect(receptionistProfile.email).toEqual(receptionist.email);
     expect(receptionistProfile.password).toEqual(receptionist.password);
     expect(receptionistProfile.phone).toEqual(receptionist.phone);
+  });
+
+  it("should not be able to show Receptionist profile for non exists receptionist", async () => {
+    const email = "jessicaTest@gmail.com";
+
+    await expect(showProfileReceptionistUseCase.execute(email)).rejects.toEqual(
+      new AppError("Receptionist account or email not exists!")
+    );
   });
 });
