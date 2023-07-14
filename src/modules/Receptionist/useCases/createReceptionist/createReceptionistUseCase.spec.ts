@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "vitest";
-import { CreateReceptionistUseCase } from "./createReceptionistUseCase";
-import { ReceptionistRepositoryInMemory } from "../repositories/in-Memory/ReceptionistRepositoryInMemory";
 import { AppError } from "@errors/appError";
+import { ReceptionistRepositoryInMemory } from "modules/Receptionist/repositories/in-Memory/ReceptionistRepositoryInMemory";
+import { CreateReceptionistUseCase } from "./createReceptionistUseCase";
 
 let createReceptionistUseCase: CreateReceptionistUseCase;
 let receptionistRepository: ReceptionistRepositoryInMemory;
