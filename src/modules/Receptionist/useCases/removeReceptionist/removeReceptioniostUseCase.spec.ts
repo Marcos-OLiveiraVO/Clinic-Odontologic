@@ -24,7 +24,7 @@ describe("Remove Receptionist", async () => {
   it("should be able to remove a receptionist", async () => {
     const receptionist = await createReceptionistUseCase.execute({
       name: "Jessica",
-      email: "jessicaTest@@mail.com",
+      email: "jessicaTest@mail.com",
       password: "12345",
       phone: "XXX-XXX-XXX-XXX",
     });
