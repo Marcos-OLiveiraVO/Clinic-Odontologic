@@ -12,8 +12,6 @@ class CreateReceptionistUseCase {
     password,
     phone,
     updatedAt,
-    createdAt,
-    authorization_level,
   }: ICreateReceptionistDTO): Promise<Receptionist> {
     const receptionistAlreadyExists =
       await this.receptionistRepository.findByEmail(email);
