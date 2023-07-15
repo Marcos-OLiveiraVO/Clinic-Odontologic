@@ -55,6 +55,7 @@ class ReceptionistRepositoryInMemory implements IReceptionistRepository {
     newEmail,
     newPassword,
     newPhone,
+    updatedAt,
   }: IUpdateReceptionistRequest): Promise<Receptionist> {
     const receptionist = this.receptionist.find(
       (receptionist) => receptionist.email === originalEmail
@@ -64,7 +65,7 @@ class ReceptionistRepositoryInMemory implements IReceptionistRepository {
     receptionist.email = newEmail;
     receptionist.password = newPassword;
     receptionist.phone = newPhone;
-    receptionist.updatedAt = new Date();
+    receptionist.updatedAt = updatedAt;
 
     return receptionist;
   }

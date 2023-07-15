@@ -25,22 +25,13 @@ class UpdateReceptionistUseCase {
 
     const passwordHashed = await hash(newPassword, 6);
 
-    receptionist = {
-      ...receptionist,
-      email: newEmail,
-      name: newName,
-      password: passwordHashed,
-      phone: newPhone,
-      updatedAt,
-    };
-
     await this.receptionistRepository.update({
       originalEmail,
       newEmail,
       newName,
-      newPassword,
+      newPassword: passwordHashed,
       newPhone,
-      updatedAt: new Date(),
+      updatedAt: updatedAt ?? new Date(),
     });
 
     return receptionist;
