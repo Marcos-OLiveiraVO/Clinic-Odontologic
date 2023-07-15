@@ -1,6 +1,7 @@
 import { Receptionist } from "@prisma/client";
 import { IReceptionistRepository } from "../IReceptionistRepository";
 import { v4 as uuidV4 } from "uuid";
+import { IUpdateReceptionistRequest } from "modules/Receptionist/dtos/IUpdateReceptionistRequest";
 
 class ReceptionistRepositoryInMemory implements IReceptionistRepository {
   receptionist: Receptionist[] = [];
@@ -46,6 +47,26 @@ class ReceptionistRepositoryInMemory implements IReceptionistRepository {
     if (receptionistIndex !== -1) {
       this.receptionist.splice(receptionistIndex, 1);
     }
+  }
+
+  async update({
+    originalEmail,
+    newName,
+    newEmail,
+    newPassword,
+    newPhone,
+  }: IUpdateReceptionistRequest): Promise<Receptionist> {
+    const receptionist = this.receptionist.find(
+      (receptionist) => receptionist.email === originalEmail
+    );
+
+    receptionist.name = newName;
+    receptionist.email = newEmail;
+    receptionist.password = newPassword;
+    receptionist.phone = newPhone;
+    receptionist.updatedAt = new Date();
+
+    return receptionist;
   }
 }
 
