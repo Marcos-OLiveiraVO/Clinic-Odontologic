@@ -3,11 +3,12 @@ import { IResponseAdminDTO } from "../dtos/IResponseAdminDTO";
 import { Admin } from "@prisma/client";
 
 class AdminMapper {
-  static ToDTO({ name, email, username }: Admin): IResponseAdminDTO {
+  static ToDTO({ name, email, username, password }: Admin): IResponseAdminDTO {
     const admin = instanceToInstance({
       name,
       email,
       username,
+      password,
     });
     return admin;
   }

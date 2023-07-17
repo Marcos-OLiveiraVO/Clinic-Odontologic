@@ -30,13 +30,11 @@ describe("Show Admin Profile", async () => {
       password: admin.password,
     });
 
-    await adminRepository.findByEmail(admin.email);
-
     const adminProfile = await showProfileAdminUseCase.execute(admin.email);
 
     expect(adminProfile.name).toEqual(admin.name);
-    expect(adminProfile.username).toEqual(admin.username);
     expect(adminProfile.email).toEqual(admin.email);
+    expect(adminProfile.username).toEqual(admin.username);
   });
 
   it("should not be able to show admin profile if email or account not exists", async () => {
