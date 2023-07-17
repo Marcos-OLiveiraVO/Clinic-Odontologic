@@ -37,9 +37,11 @@ describe("Remove Receptionist", async () => {
   });
 
   it("should not be able to remove a non exists receptionist", async () => {
-    const email = "jessicaTest@mail.com";
+    const ReceptionistEmail = "jessicaTest@mail.com";
 
-    await expect(removeReceptionistUseCase.execute(email)).rejects.toEqual(
+    await expect(
+      removeReceptionistUseCase.execute(ReceptionistEmail)
+    ).rejects.toEqual(
       new AppError("Receptionist account or email not exists!")
     );
   });
