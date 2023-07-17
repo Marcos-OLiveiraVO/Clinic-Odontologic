@@ -1,5 +1,5 @@
 import { AppError } from "@errors/appError";
-import { IResponseReceptionistProfile } from "modules/Receptionist/dtos/IResponseReceptionist";
+import { IResponseReceptionistProfile } from "modules/Receptionist/dtos/IResponseReceptionistProfile";
 import { ReceptionistMapper } from "modules/Receptionist/mappers/ReceptionistMapper";
 
 import { IReceptionistRepository } from "modules/Receptionist/repositories/IReceptionistRepository";

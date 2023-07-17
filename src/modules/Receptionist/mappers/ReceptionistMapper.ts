@@ -1,6 +1,6 @@
 import { Receptionist } from "@prisma/client";
 import { instanceToInstance } from "class-transformer";
-import { IResponseReceptionistProfile } from "../dtos/IResponseReceptionist";
+import { IResponseReceptionistProfile } from "../dtos/IResponseReceptionistProfile";
 
 class ReceptionistMapper {
   static ToDTO({
