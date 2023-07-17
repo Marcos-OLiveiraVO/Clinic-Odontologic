@@ -13,19 +13,11 @@ class UpdateManagerUseCase {
     newPassword,
     newPhone,
   }: IUpdateRequestManager): Promise<Manager> {
-    let manager = await this.managerRepository.findByEmail(originalEmail);
+    const manager = await this.managerRepository.findByEmail(originalEmail);
 
     if (!manager) {
       throw new AppError("Manager Account or email not exists!");
     }
-
-    manager = {
-      ...manager,
-      email: newEmail,
-      name: newName,
-      password: newPassword,
-      phone: newPhone,
-    };
 
     await this.managerRepository.update({
       originalEmail,
