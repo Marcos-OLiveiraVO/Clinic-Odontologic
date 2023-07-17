@@ -27,6 +27,9 @@ describe("Create Receptionist", async () => {
     expect(receptionist).toHaveProperty("email");
     expect(receptionist).toHaveProperty("password");
     expect(receptionist).toHaveProperty("phone");
+    expect(receptionist).toHaveProperty("authorization_level");
+    expect(receptionist).toHaveProperty("createdAt");
+    expect(receptionist).toHaveProperty("updatedAt");
   });
 
   it("should not be able to create a exists receptionist", async () => {
