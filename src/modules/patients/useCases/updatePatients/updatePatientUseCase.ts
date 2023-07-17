@@ -14,21 +14,11 @@ class UpdatePatientUseCase {
     new_medical_history_id,
     new_medical_record_id,
   }: IPatientRequestDTO): Promise<Patient> {
-    let patient = await this.patientRepository.findByEmail(originalEmail);
+    const patient = await this.patientRepository.findByEmail(originalEmail);
 
     if (!patient) {
       throw new AppError("Patient not found");
     }
-
-    patient = {
-      ...patient,
-      name: newName,
-      email: newEmail,
-      insurance_id: new_insurance_id,
-      medical_history_id: new_medical_history_id,
-      medical_record_id: new_medical_record_id,
-      updatedAt: new Date(),
-    };
 
     await this.patientRepository.update({
       newName,
