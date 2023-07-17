@@ -15,7 +15,7 @@ class UpdateReceptionistUseCase {
     newPhone,
     updatedAt,
   }: IUpdateReceptionistRequest): Promise<Receptionist> {
-    let receptionist = await this.receptionistRepository.findByEmail(
+    const receptionist = await this.receptionistRepository.findByEmail(
       originalEmail
     );
 
