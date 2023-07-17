@@ -28,8 +28,8 @@ describe("Update Patient", async () => {
       originalEmail: "sameEmail@mail.com",
       newEmail: "patient@gmail.com",
       new_insurance_id: 6666,
-      new_medical_history_id: null,
-      new_medical_record_id: null,
+      new_medical_history_id: undefined,
+      new_medical_record_id: undefined,
     });
 
     expect(updatedPatient.id).toBe(patient.id);
@@ -42,8 +42,8 @@ describe("Update Patient", async () => {
         originalEmail: "sameEmail@gmail.com",
         newEmail: "patient@gmail.com",
         new_insurance_id: 7777,
-        new_medical_history_id: null,
-        new_medical_record_id: null,
+        new_medical_history_id: undefined,
+        new_medical_record_id: undefined,
       })
     ).rejects.toEqual(new AppError("Patient not found"));
   });
