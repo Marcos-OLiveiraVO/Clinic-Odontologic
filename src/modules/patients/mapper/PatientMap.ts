@@ -1,6 +1,6 @@
 import { Patient } from "@prisma/client";
 import { instanceToInstance } from "class-transformer";
-import { IPatientResponseDTO } from "../dtos/IPatientResponseDTO";
+import { IResponsePatientProfile } from "../dtos/IResponsePatientProfile";
 
 class PatientMap {
   static toDTO({
@@ -8,7 +8,7 @@ class PatientMap {
     email,
     phone,
     insurance_id,
-  }: Patient): IPatientResponseDTO {
+  }: Patient): IResponsePatientProfile {
     const patient = instanceToInstance({
       name,
       email,

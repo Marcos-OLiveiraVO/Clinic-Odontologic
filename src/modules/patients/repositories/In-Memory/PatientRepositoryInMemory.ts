@@ -2,8 +2,8 @@ import { Patient } from "@prisma/client";
 import { v4 as uuidV4 } from "uuid";
 
 import { IPatientRepository } from "../IPatientRepository";
-import { IPatientCreateDTO } from "modules/patients/dtos/IPatientCreateDTO";
-import { IPatientRequestUpdateDTO } from "modules/patients/dtos/IPatientRequestUpdateDTO";
+import { ICreatePatientDTO } from "modules/patients/dtos/ICreatePatientDTO";
+import { IUpdateRequestPatient } from "modules/patients/dtos/IUpdateRequestPatient";
 
 class PatientRepositoryInMemory implements IPatientRepository {
   patient: Patient[] = [];
@@ -18,7 +18,7 @@ class PatientRepositoryInMemory implements IPatientRepository {
     createdAt,
     updatedAt,
     authorization_level,
-  }: IPatientCreateDTO): Promise<Patient> {
+  }: ICreatePatientDTO): Promise<Patient> {
     const newPatient: Patient = {
       id: uuidV4(),
       name,
@@ -52,7 +52,7 @@ class PatientRepositoryInMemory implements IPatientRepository {
     new_insurance_id,
     new_medical_history_id,
     new_medical_record_id,
-  }: IPatientRequestUpdateDTO): Promise<Patient> {
+  }: IUpdateRequestPatient): Promise<Patient> {
     const patient = this.patient.find(
       (patient) => patient.email === originalEmail
     );

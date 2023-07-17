@@ -1,12 +1,12 @@
 import { Patient } from "@prisma/client";
-import { IPatientCreateDTO } from "../dtos/IPatientCreateDTO";
-import { IPatientRequestUpdateDTO } from "../dtos/IPatientRequestUpdateDTO";
+import { ICreatePatientDTO } from "../dtos/ICreatePatientDTO";
+import { IUpdateRequestPatient } from "../dtos/IUpdateRequestPatient";
 
 interface IPatientRepository {
-  create(data: IPatientCreateDTO): Promise<Patient>;
+  create(data: ICreatePatientDTO): Promise<Patient>;
   findByEmail(email: string): Promise<Patient>;
+  update(data: IUpdateRequestPatient): Promise<Patient>;
   listAll(): Promise<Patient[]>;
-  update(patientRequestUpdate: IPatientRequestUpdateDTO): Promise<Patient>;
   remove(email: string): Promise<void>;
 }
 
