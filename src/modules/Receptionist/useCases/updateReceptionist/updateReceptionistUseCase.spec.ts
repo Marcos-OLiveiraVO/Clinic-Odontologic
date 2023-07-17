@@ -2,6 +2,7 @@ import { ReceptionistRepositoryInMemory } from "modules/Receptionist/repositorie
 import { beforeAll, describe, expect, it } from "vitest";
 import { CreateReceptionistUseCase } from "../createReceptionist/createReceptionistUseCase";
 import { UpdateReceptionistUseCase } from "./updateReceptionistUseCase";
+import { AppError } from "@errors/appError";
 
 let receptionistRepository: ReceptionistRepositoryInMemory;
 let createReceptionistUseCase: CreateReceptionistUseCase;
@@ -36,8 +37,20 @@ describe("Update Receptionist", async () => {
       newPhone: "XXX-XXX-XXX",
     });
 
-    console.log(receptionistUpdated);
-
     expect(receptionistUpdated.id).toEqual(receptionist.id);
+  });
+
+  it("should not be able to update a non exists receptionist", async () => {
+    await expect(
+      updateReceptionistUseCase.execute({
+        newName: "Jessy",
+        originalEmail: "jessicaTest@@mail.com",
+        newEmail: "jessyTest@mail.com",
+        newPassword: "123456",
+        newPhone: "XXX-XXX-XXX",
+      })
+    ).rejects.toEqual(
+      new AppError("Receptionist account or email not exists!")
+    );
   });
 });
