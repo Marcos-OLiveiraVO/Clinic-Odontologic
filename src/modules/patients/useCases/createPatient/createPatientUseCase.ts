@@ -1,9 +1,9 @@
 import { Injectable } from "@nestjs/common";
 import { AppError } from "../../../../shared/errors/appError";
 
-import { IPatientCreateDTO } from "modules/patients/dtos/IPatientCreateDTO";
 import { Patient } from "@prisma/client";
 import { IPatientRepository } from "modules/patients/repositories/IPatientRepository";
+import { ICreatePatientDTO } from "modules/patients/dtos/ICreatePatientDTO";
 
 @Injectable()
 class CreatePatientUseCase {
@@ -14,7 +14,7 @@ class CreatePatientUseCase {
     email,
     phone,
     insurance_id,
-  }: IPatientCreateDTO): Promise<Patient> {
+  }: ICreatePatientDTO): Promise<Patient> {
     const patientAlreadyExists = await this.patientRepository.findByEmail(
       email
     );

@@ -1,12 +1,12 @@
 import { AppError } from "@errors/appError";
-import { IPatientResponseDTO } from "modules/patients/dtos/IPatientResponseDTO";
+import { IResponsePatientProfile } from "modules/patients/dtos/IResponsePatientProfile";
 import { PatientMap } from "modules/patients/mapper/PatientMap";
 import { IPatientRepository } from "modules/patients/repositories/IPatientRepository";
 
 class ShowProfilePatientUseCase {
   constructor(private patientRepository: IPatientRepository) {}
 
-  async execute(email: string): Promise<IPatientResponseDTO> {
+  async execute(email: string): Promise<IResponsePatientProfile> {
     const patientExists = await this.patientRepository.findByEmail(email);
 
     if (!patientExists) {

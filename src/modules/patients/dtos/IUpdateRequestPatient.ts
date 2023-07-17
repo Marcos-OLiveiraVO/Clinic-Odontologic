@@ -1,4 +1,4 @@
-interface IPatientRequestUpdateDTO {
+interface IUpdateRequestPatient {
   newName: string;
   originalEmail: string;
   newEmail: string;
@@ -7,4 +7,4 @@ interface IPatientRequestUpdateDTO {
   new_medical_record_id?: number;
 }
 
-export { IPatientRequestUpdateDTO };
+export { IUpdateRequestPatient };

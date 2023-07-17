@@ -1,6 +1,6 @@
 import { AppError } from "@errors/appError";
 import { Patient } from "@prisma/client";
-import { IPatientRequestDTO } from "modules/patients/dtos/IPatientRequestDTO";
+import { IUpdateRequestPatient } from "modules/patients/dtos/IUpdateRequestPatient";
 import { IPatientRepository } from "modules/patients/repositories/IPatientRepository";
 
 class UpdatePatientUseCase {
@@ -13,7 +13,7 @@ class UpdatePatientUseCase {
     new_insurance_id,
     new_medical_history_id,
     new_medical_record_id,
-  }: IPatientRequestDTO): Promise<Patient> {
+  }: IUpdateRequestPatient): Promise<Patient> {
     const patient = await this.patientRepository.findByEmail(originalEmail);
 
     if (!patient) {
