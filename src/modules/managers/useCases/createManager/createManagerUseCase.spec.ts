@@ -21,6 +21,10 @@ describe("Create manager", async () => {
     });
 
     expect(manager).toHaveProperty("id");
+    expect(manager).toHaveProperty("name");
+    expect(manager).toHaveProperty("email");
+    expect(manager).toHaveProperty("password");
+    expect(manager).toHaveProperty("phone");
   });
 
   it("should not be able to create a new manager if manager email already exists", async () => {

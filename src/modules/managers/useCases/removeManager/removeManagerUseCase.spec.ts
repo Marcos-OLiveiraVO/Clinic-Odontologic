@@ -29,9 +29,9 @@ describe("Remove manager", async () => {
   });
 
   it("should not be able to remove a non exists manager", async () => {
-    const email = "managerTest@mail.com";
+    const managerEmail = "managerTest@mail.com";
 
-    await expect(removeManagerUseCase.execute(email)).rejects.toEqual(
+    await expect(removeManagerUseCase.execute(managerEmail)).rejects.toEqual(
       new AppError("Manager account or email not exists!")
     );
   });

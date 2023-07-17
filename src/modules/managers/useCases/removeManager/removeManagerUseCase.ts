@@ -5,9 +5,9 @@ class RemoveManagerUseCase {
   constructor(private managerRepository: IManagerRepository) {}
 
   async execute(email: string): Promise<void> {
-    const manager = await this.managerRepository.findByEmail(email);
+    const managerExists = await this.managerRepository.findByEmail(email);
 
-    if (!manager) {
+    if (!managerExists) {
       throw new AppError("Manager account or email not exists!");
     }
 

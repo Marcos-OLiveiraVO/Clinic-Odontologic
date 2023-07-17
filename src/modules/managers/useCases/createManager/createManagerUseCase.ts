@@ -14,15 +14,15 @@ class CreateManagerUseCase {
     phone,
     updatedAt,
   }: ICreateManagerDTO): Promise<Manager> {
-    const adminAlreadyExists = await this.manageRepository.findByEmail(email);
+    const managerAlreadyExists = await this.manageRepository.findByEmail(email);
 
-    if (adminAlreadyExists) {
+    if (managerAlreadyExists) {
       throw new AppError("Account admin or email not exists!");
     }
 
     const hashedPassword = await hash(password, 6);
 
-    const admin = await this.manageRepository.create({
+    const manager = await this.manageRepository.create({
       name,
       email,
       password: hashedPassword,
@@ -32,7 +32,7 @@ class CreateManagerUseCase {
       updatedAt,
     });
 
-    return admin;
+    return manager;
   }
 }
 
