@@ -29,11 +29,11 @@ describe("Remove Receptionist", async () => {
       phone: "XXX-XXX-XXX-XXX",
     });
 
-    const receptionistRemoved = await removeReceptionistUseCase.execute(
+    const receptionistBeRemoved = await removeReceptionistUseCase.execute(
       receptionist.email
     );
 
-    expect(receptionistRemoved).toBeUndefined();
+    expect(receptionistBeRemoved).toBeUndefined();
   });
 
   it("should not be able to remove a non exists receptionist", async () => {
