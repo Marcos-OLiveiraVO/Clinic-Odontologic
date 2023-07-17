@@ -15,32 +15,23 @@ class UpdateAdminUseCase {
     newEmail,
     newPassword,
   }: IAdminUpdateRequestDTO): Promise<Admin> {
-    let admin = await this.adminRepository.findByEmail(originalEmail);
+    let adminExists = await this.adminRepository.findByEmail(originalEmail);
 
-    if (!admin) {
+    if (!adminExists) {
       throw new AppError("Email or account not exists!");
     }
 
     const hashedPassword = await hash(newPassword, 6);
-
-    admin = {
-      ...admin,
-      name: newName,
-      username: newUsername,
-      email: newEmail,
-      password: hashedPassword,
-      updatedAt: new Date(),
-    };
 
     await this.adminRepository.update({
       newName,
       newUsername,
       originalEmail,
       newEmail,
-      newPassword,
+      newPassword: hashedPassword,
     });
 
-    return admin;
+    return adminExists;
   }
 }
 
