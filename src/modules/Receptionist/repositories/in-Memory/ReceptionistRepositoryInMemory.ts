@@ -39,16 +39,6 @@ class ReceptionistRepositoryInMemory implements IReceptionistRepository {
     return receptionist;
   }
 
-  async remove(email: string): Promise<void> {
-    const receptionistIndex = this.receptionist.findIndex(
-      (receptionist) => receptionist.email === email
-    );
-
-    if (receptionistIndex !== -1) {
-      this.receptionist.splice(receptionistIndex, 1);
-    }
-  }
-
   async update({
     originalEmail,
     newName,
@@ -68,6 +58,16 @@ class ReceptionistRepositoryInMemory implements IReceptionistRepository {
     receptionist.updatedAt = updatedAt;
 
     return receptionist;
+  }
+
+  async remove(email: string): Promise<void> {
+    const receptionistIndex = this.receptionist.findIndex(
+      (receptionist) => receptionist.email === email
+    );
+
+    if (receptionistIndex !== -1) {
+      this.receptionist.splice(receptionistIndex, 1);
+    }
   }
 }
 
