@@ -42,15 +42,10 @@ describe("Show Patient Profile", async () => {
   });
 
   it("should not be able to show profile if patients not exists", async () => {
-    const patient = {
-      name: "XXX",
-      email: "test@mail.com",
-      phone: "XXX-XXX",
-      insurance_id: 6666,
-    };
+    const patientEmail = "patientTest@mail.com";
 
     await expect(
-      showProfilePatientUseCase.execute(patient.email)
+      showProfilePatientUseCase.execute(patientEmail)
     ).rejects.toEqual(new AppError("Patient or email not exists!"));
   });
 });
