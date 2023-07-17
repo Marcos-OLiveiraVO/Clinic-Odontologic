@@ -5,9 +5,9 @@ class RemovePatientUseCase {
   constructor(private patientRepository: IPatientRepository) {}
 
   async execute(email: string): Promise<void> {
-    const emailExists = await this.patientRepository.findByEmail(email);
+    const patientEmailExists = await this.patientRepository.findByEmail(email);
 
-    if (!emailExists) {
+    if (!patientEmailExists) {
       throw new AppError("Email or patient not exists!");
     }
 

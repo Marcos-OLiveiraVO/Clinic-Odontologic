@@ -33,19 +33,14 @@ describe("Remove patient", () => {
 
     await removePatientUseCase.execute(patient.email);
 
-    const patientRemoved = await patientRepository.findByEmail(patient.email);
-    expect(patientRemoved).toBeUndefined();
+    const patientBeRemoved = await patientRepository.findByEmail(patient.email);
+    expect(patientBeRemoved).toBeUndefined();
   });
 
   it("should not be able to remove a patient if patient not exists", async () => {
-    const patient = {
-      name: "XXX",
-      email: "sameEmail@gmail.com",
-      phone: "XXX-XXX",
-      insurance_id: 5555,
-    };
+    const patientEmail = "patientTest@mail.com";
 
-    await expect(removePatientUseCase.execute(patient.email)).rejects.toEqual(
+    await expect(removePatientUseCase.execute(patientEmail)).rejects.toEqual(
       new AppError("Email or patient not exists!")
     );
   });
