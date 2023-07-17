@@ -30,13 +30,16 @@ describe("Show Profile Manager", async () => {
     );
 
     expect(managerProfile.name).toBe(manager.name);
+    expect(managerProfile.email).toBe(manager.email);
+    expect(managerProfile.password).toBe(manager.password);
+    expect(managerProfile.phone).toBe(manager.phone);
   });
 
   it("should not be able to show profile for non exists manager", async () => {
-    const email = "managerTest@mail.com";
+    const managerEmail = "managerTest@mail.com";
 
-    await expect(showProfileManagerUseCase.execute(email)).rejects.toEqual(
-      new AppError("Manager account or email not exists!")
-    );
+    await expect(
+      showProfileManagerUseCase.execute(managerEmail)
+    ).rejects.toEqual(new AppError("Manager account or email not exists!"));
   });
 });
