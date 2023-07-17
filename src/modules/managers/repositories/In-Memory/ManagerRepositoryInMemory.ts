@@ -33,9 +33,7 @@ class ManagerRepositoryInMemory implements IManagerRepository {
   }
 
   async findByEmail(email: string): Promise<Manager> {
-    const manager = await this.manager.find(
-      (manager) => manager.email === email
-    );
+    const manager = this.manager.find((manager) => manager.email === email);
 
     return manager;
   }

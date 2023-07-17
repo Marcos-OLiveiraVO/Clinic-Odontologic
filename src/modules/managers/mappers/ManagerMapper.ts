@@ -1,9 +1,14 @@
 import { Manager } from "@prisma/client";
 import { instanceToInstance } from "class-transformer";
-import { IResponseManagerDTO } from "../dtos/IResponseManagerDTO";
+import { IResponseManagerProfile } from "../dtos/IResponseManagerProfile";
 
 class ManagerMapper {
-  static ToDTO({ name, email, phone, password }: Manager): IResponseManagerDTO {
+  static ToDTO({
+    name,
+    email,
+    phone,
+    password,
+  }: Manager): IResponseManagerProfile {
     const manager = instanceToInstance({
       name,
       email,
