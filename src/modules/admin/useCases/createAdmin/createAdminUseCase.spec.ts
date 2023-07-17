@@ -21,9 +21,9 @@ describe("Create Admin", async () => {
     });
 
     expect(admin).toHaveProperty("id");
-    expect(admin.name).toBe(admin.name);
-    expect(admin.username).toBe(admin.username);
-    expect(admin.password).toBe(admin.password);
+    expect(admin).toHaveProperty("name");
+    expect(admin).toHaveProperty("email");
+    expect(admin).toHaveProperty("password");
   });
 
   it("should not be able to create an admin if admin already exists", async () => {
