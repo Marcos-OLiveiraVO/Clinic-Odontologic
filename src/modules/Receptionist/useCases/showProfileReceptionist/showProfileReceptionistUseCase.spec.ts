@@ -40,9 +40,11 @@ describe("Show Receptionist profile", async () => {
   });
 
   it("should not be able to show Receptionist profile for non exists receptionist", async () => {
-    const email = "jessicaTest@gmail.com";
+    const ReceptionistEmail = "jessicaTest@gmail.com";
 
-    await expect(showProfileReceptionistUseCase.execute(email)).rejects.toEqual(
+    await expect(
+      showProfileReceptionistUseCase.execute(ReceptionistEmail)
+    ).rejects.toEqual(
       new AppError("Receptionist account or email not exists!")
     );
   });
