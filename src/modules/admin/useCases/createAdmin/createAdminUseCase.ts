@@ -4,6 +4,7 @@ import { hash } from "bcrypt";
 import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
 import { Admin } from "@prisma/client";
 import { Injectable } from "@nestjs/common";
+import { v4 as uuidV4 } from "uuid";
 
 @Injectable()
 class CreateAdminUseCase {
@@ -14,6 +15,7 @@ class CreateAdminUseCase {
     username,
     email,
     password,
+    id,
   }: ICreateAdminDTO): Promise<Admin> {
     const adminAlreadyExists = await this.adminRepository.findByEmail(email);
 
@@ -24,6 +26,7 @@ class CreateAdminUseCase {
     const createHashedPassword = await hash(password, 6);
 
     const admin = await this.adminRepository.create({
+      id,
       name,
       username,
       email,

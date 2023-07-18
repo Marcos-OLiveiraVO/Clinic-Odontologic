@@ -24,7 +24,7 @@ model Patient {
 }
 
 model Admin {
-  id                  Int      @id @default(autoincrement())
+  id                  String   @id @unique @default(uuid())
   name                String
   username            String   @unique
   email               String   @unique

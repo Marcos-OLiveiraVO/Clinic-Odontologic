@@ -4,14 +4,11 @@ import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
 import { hash } from "bcrypt";
 import { Admin } from "@prisma/client";
 import { IAdminUpdateRequestDTO } from "modules/admin/dtos/IAdminUpdateRequestDTO";
-import { Inject, Injectable } from "@nestjs/common";
+import { Injectable } from "@nestjs/common";
 
 @Injectable()
 class UpdateAdminUseCase {
-  constructor(
-    @Inject("AdminRepository")
-    private adminRepository: IAdminRepository
-  ) {}
+  constructor(private adminRepository: IAdminRepository) {}
 
   async execute({
     newName,

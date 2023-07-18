@@ -1,15 +1,12 @@
 import { AppError } from "@errors/appError";
-import { Inject, Injectable } from "@nestjs/common";
+import { Injectable } from "@nestjs/common";
 import { IResponseAdminDTO } from "modules/admin/dtos/IResponseAdminDTO";
 import { AdminMapper } from "modules/admin/mapper/AdminMapper";
 import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
 
 @Injectable()
 class ShowProfileAdminUseCase {
-  constructor(
-    @Inject("AdminRepository")
-    private adminRepository: IAdminRepository
-  ) {}
+  constructor(private adminRepository: IAdminRepository) {}
 
   async execute(email: string): Promise<IResponseAdminDTO> {
     const adminExists = await this.adminRepository.findByEmail(email);

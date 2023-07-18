@@ -4,10 +4,7 @@ import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
 
 @Injectable()
 class RemoveAdminUseCase {
-  constructor(
-    @Inject("AdminRepository")
-    private adminRepository: IAdminRepository
-  ) {}
+  constructor(private adminRepository: IAdminRepository) {}
 
   async execute(email: string): Promise<void> {
     const admin = await this.adminRepository.findByEmail(email);
