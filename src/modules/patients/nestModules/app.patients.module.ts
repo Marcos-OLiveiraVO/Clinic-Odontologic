@@ -20,5 +20,13 @@ import { PatientRepository } from "../infra/prisma/repositories/PatientRepositor
     UpdatePatientUseCase,
     PatientRepository,
   ],
+  exports: [
+    CreatePatientUseCase,
+    ListPatientsUseCase,
+    RemovePatientUseCase,
+    ShowProfilePatientUseCase,
+    UpdatePatientUseCase,
+    PatientRepository,
+  ],
 })
 export class AppPatientsModule {}

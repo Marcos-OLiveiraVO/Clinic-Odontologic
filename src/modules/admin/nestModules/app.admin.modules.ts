@@ -15,5 +15,12 @@ import { UpdateAdminUseCase } from "../useCases/updateAdmin/updateAdminUseCase";
     UpdateAdminUseCase,
     AdminRepository,
   ],
+  exports: [
+    CreateAdminUseCase,
+    RemoveAdminUseCase,
+    ShowProfileAdminUseCase,
+    UpdateAdminUseCase,
+    AdminRepository,
+  ],
 })
 export class AppAdminModule {}

@@ -15,5 +15,12 @@ import { UpdateReceptionistUseCase } from "../useCases/updateReceptionist/update
     UpdateReceptionistUseCase,
     ReceptionistRepository,
   ],
+  exports: [
+    CreateReceptionistUseCase,
+    RemoveReceptionistUseCase,
+    ShowProfileReceptionistUseCase,
+    UpdateReceptionistUseCase,
+    ReceptionistRepository,
+  ],
 })
 export class AppReceptionistModule {}
