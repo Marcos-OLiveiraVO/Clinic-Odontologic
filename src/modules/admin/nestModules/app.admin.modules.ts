@@ -1,26 +1,23 @@
-import { AppError } from "@errors/appError";
 import { Module } from "@nestjs/common";
+import { CreateAdminController } from "../useCases/createAdmin/createAdminController";
 import { CreateAdminUseCase } from "../useCases/createAdmin/createAdminUseCase";
-import { RemoveAdminUseCase } from "../useCases/removeAdmin/removeAdminUseCase";
-import { ShowProfileAdminUseCase } from "../useCases/showProfileAdmin/showProfileAdminUseCase";
-import { UpdateAdminUseCase } from "../useCases/updateAdmin/updateAdminUseCase";
+import { AdminRepository } from "../infra/prisma/adminRepository";
+import { PrismaModule } from "../../../../prisma/prisma.module";
+import { PrismaService } from "../../../../prisma/prisma.service";
+import { IAdminRepository } from "../repositories/IAdminRepository";
 
 @Module({
-  imports: [AppError],
-  controllers: [],
+  imports: [PrismaModule],
+  controllers: [CreateAdminController],
   providers: [
     CreateAdminUseCase,
-    RemoveAdminUseCase,
-    ShowProfileAdminUseCase,
-    UpdateAdminUseCase,
     AdminRepository,
+    PrismaService,
+    {
+      provide: IAdminRepository,
+      useClass: AdminRepository,
+    },
   ],
-  exports: [
-    CreateAdminUseCase,
-    RemoveAdminUseCase,
-    ShowProfileAdminUseCase,
-    UpdateAdminUseCase,
-    AdminRepository,
-  ],
+  exports: [PrismaService],
 })
 export class AppAdminModule {}

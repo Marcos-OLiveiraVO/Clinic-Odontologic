@@ -3,7 +3,9 @@ import { ICreateAdminDTO } from "modules/admin/dtos/ICreateAdminDTO";
 import { hash } from "bcrypt";
 import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
 import { Admin } from "@prisma/client";
+import { Injectable } from "@nestjs/common";
 
+@Injectable()
 class CreateAdminUseCase {
   constructor(private adminRepository: IAdminRepository) {}
 
