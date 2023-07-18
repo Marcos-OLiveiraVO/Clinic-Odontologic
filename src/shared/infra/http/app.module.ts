@@ -1,13 +1,21 @@
-import { PacientRepository } from "@modules/pacients/infra/prisma/repositories/PacientRepository";
-import { CreatePatientUseCase } from "@modules/pacients/useCases/createPatient/createPatientUseCase";
-import { ListPacientsController } from "@modules/pacients/useCases/listPacients/listPacientsController";
-import { ListPacientsUseCase } from "@modules/pacients/useCases/listPacients/listPacientsUseCase";
+import { AppError } from "@errors/appError";
 import { Module } from "@nestjs/common";
-import { AppError } from "@shared/errors/appError";
+import { AuthModule } from "auth/auth.module";
+import { AppAdminModule } from "modules/admin/nestModules/app.admin.modules";
+import { AppManagersModule } from "modules/managers/nestModules/app.managers.module";
+import { AppPatientsModule } from "modules/patients/nestModules/app.patients.module";
+import { ListPatientsController } from "modules/patients/useCases/listPatients/listPatientsController";
+import { AppReceptionistModule } from "modules/receptionist/nestModules/app.receptionist.module";
 
 @Module({
   imports: [AppError],
-  controllers: [ListPacientsController],
-  providers: [ListPacientsUseCase, PacientRepository, CreatePatientUseCase],
+  controllers: [],
+  providers: [
+    AppPatientsModule,
+    AppAdminModule,
+    AppManagersModule,
+    AppReceptionistModule,
+    AuthModule,
+  ],
 })
 export class AppModule {}
