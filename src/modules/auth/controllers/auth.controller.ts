@@ -8,13 +8,10 @@ import {
   Request,
   UseGuards,
 } from "@nestjs/common";
-import { AuthService } from "./auth.service";
-import { AuthGuard } from "./AuthGuard";
 
-interface signInDTO {
-  email: string;
-  password: string;
-}
+import { signInDTO } from "modules/auth/dto/signInDTO";
+import { AuthGuard } from "modules/auth/useCase/AuthGuard";
+import { AuthService } from "modules/auth/useCase/authAdmin/auth.service";
 
 @Controller("auth")
 export class AuthController {

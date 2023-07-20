@@ -1,11 +1,11 @@
 import { Module } from "@nestjs/common";
-import { AuthController } from "./auth.controller";
-import { AuthService } from "./auth.service";
 import { JwtModule } from "@nestjs/jwt";
+
 import { AdminRepository } from "modules/admin/infra/prisma/adminRepository";
 import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
-import { AppAdminModule } from "modules/admin/nestModules/app.admin.modules";
-import { PrismaModule } from "../../prisma/prisma.module";
+import { PrismaModule } from "../../../../prisma/prisma.module";
+import { AuthController } from "modules/auth/controllers/auth.controller";
+import { AuthService } from "modules/auth/useCase/authAdmin/auth.service";
 
 @Module({
   imports: [
