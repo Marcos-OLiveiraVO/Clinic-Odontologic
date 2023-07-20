@@ -1,8 +1,11 @@
 import { Module } from "@nestjs/common";
 import { AuthController } from "./auth.controller";
 import { AuthService } from "./auth.service";
-import { AdminRepositoryInMemory } from "modules/admin/repositories/InMemory/AdminRepositoryInMemory";
 import { JwtModule } from "@nestjs/jwt";
+import { AdminRepository } from "modules/admin/infra/prisma/adminRepository";
+import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
+import { AppAdminModule } from "modules/admin/nestModules/app.admin.modules";
+import { PrismaModule } from "../../prisma/prisma.module";
 
 @Module({
   imports: [
@@ -13,12 +16,17 @@ import { JwtModule } from "@nestjs/jwt";
         expiresIn: process.env.JWT_EXPIRES_IN,
       },
     }),
+    PrismaModule,
   ],
 
-  exports: [AdminRepositoryInMemory],
-
   controllers: [AuthController],
-
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    {
+      provide: IAdminRepository,
+      useClass: AdminRepository,
+    },
+  ],
+  exports: [AuthService],
 })
 export class AuthModule {}

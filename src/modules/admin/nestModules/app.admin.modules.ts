@@ -5,9 +5,12 @@ import { AdminRepository } from "../infra/prisma/adminRepository";
 import { PrismaModule } from "../../../../prisma/prisma.module";
 import { PrismaService } from "../../../../prisma/prisma.service";
 import { IAdminRepository } from "../repositories/IAdminRepository";
+import { AuthModule } from "auth/auth.module";
+import { AuthService } from "auth/auth.service";
+import { AuthController } from "auth/auth.controller";
 
 @Module({
-  imports: [PrismaModule],
+  imports: [PrismaModule, AuthModule],
   controllers: [CreateAdminController],
   providers: [
     CreateAdminUseCase,

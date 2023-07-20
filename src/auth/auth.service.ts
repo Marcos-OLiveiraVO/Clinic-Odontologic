@@ -1,7 +1,6 @@
-import { AppError } from "@errors/appError";
-import { Injectable } from "@nestjs/common";
+import { Injectable, UnauthorizedException } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
-import { hash } from "bcrypt";
+import { compareSync } from "bcrypt";
 import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
 
 @Injectable()
@@ -11,14 +10,14 @@ class AuthService {
     private jwtService: JwtService
   ) {}
 
-  async signIn(pass: string, email: string): Promise<any> {
+  async signIn(email: string, password: string): Promise<any> {
     const admin = await this.adminRepository.findByEmail(email);
 
-    if (admin?.password !== pass) {
-      throw new AppError("Unauthorized Access");
+    if (!admin || !compareSync(password, admin.password)) {
+      throw new UnauthorizedException();
     }
 
-    const payload = { sub: admin.id, admin: admin.email };
+    const payload = { sub: admin.id, username: admin.username };
 
     return {
       access_token: await this.jwtService.signAsync(payload),
