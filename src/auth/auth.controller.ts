@@ -22,13 +22,13 @@ export class AuthController {
 
   @HttpCode(HttpStatus.OK)
   @Post("login")
-  signIn(@Body() { email, password }: signInDTO) {
+  async signIn(@Body() { email, password }: signInDTO) {
     return this.authService.signIn(email, password);
   }
 
   @UseGuards(AuthGuard)
   @Get("profile")
-  getProfile(@Request() req) {
+  async getProfile(@Request() req) {
     return req.user;
   }
 }
