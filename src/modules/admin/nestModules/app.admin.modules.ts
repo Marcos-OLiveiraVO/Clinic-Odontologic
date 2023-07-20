@@ -5,7 +5,7 @@ import { AdminRepository } from "../infra/prisma/adminRepository";
 import { PrismaModule } from "../../../../prisma/prisma.module";
 import { PrismaService } from "../../../../prisma/prisma.service";
 import { IAdminRepository } from "../repositories/IAdminRepository";
-import { AuthModule } from "modules/auth/nestModule/auth.module";
+import { AuthModule } from "shared/infra/http/middlewares/auth/nestModule/auth.module";
 
 @Module({
   imports: [PrismaModule, AuthModule],

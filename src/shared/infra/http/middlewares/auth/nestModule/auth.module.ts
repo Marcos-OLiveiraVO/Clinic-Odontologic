@@ -3,9 +3,9 @@ import { JwtModule } from "@nestjs/jwt";
 
 import { AdminRepository } from "modules/admin/infra/prisma/adminRepository";
 import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
-import { PrismaModule } from "../../../../prisma/prisma.module";
-import { AuthController } from "modules/auth/controllers/auth.controller";
-import { AuthService } from "modules/auth/useCase/authAdmin/auth.service";
+import { PrismaModule } from "../../../../../../../prisma/prisma.module";
+import { AuthController } from "shared/infra/http/middlewares/auth/controllers/auth.controller";
+import { AuthService } from "../useCases/authAdmin/authUseCase";
 
 @Module({
   imports: [

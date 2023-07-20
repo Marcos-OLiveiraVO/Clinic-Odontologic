@@ -9,7 +9,7 @@ import {
 import { CreateAdminUseCase } from "./createAdminUseCase";
 import { ICreateAdminDTO } from "modules/admin/dtos/ICreateAdminDTO";
 import { Admin } from "@prisma/client";
-import { AuthGuard } from "modules/auth/useCase/AuthGuard";
+import { AuthGuard } from "shared/infra/http/middlewares/auth/AuthGuard/AuthGuard";
 
 @Controller("admin")
 class CreateAdminController {
