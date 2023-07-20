@@ -1,12 +1,21 @@
-import { Body, Controller, HttpCode, Post, Res } from "@nestjs/common";
+import {
+  Body,
+  Controller,
+  HttpCode,
+  Post,
+  Res,
+  UseGuards,
+} from "@nestjs/common";
 import { CreateAdminUseCase } from "./createAdminUseCase";
 import { ICreateAdminDTO } from "modules/admin/dtos/ICreateAdminDTO";
 import { Admin } from "@prisma/client";
+import { AuthGuard } from "auth/AuthGuard";
 
 @Controller("admin")
 class CreateAdminController {
   constructor(private createAdminUseCase: CreateAdminUseCase) {}
 
+  @UseGuards(AuthGuard)
   @Post()
   @HttpCode(201)
   async create(@Body() createAdminDTo: ICreateAdminDTO): Promise<Admin> {
