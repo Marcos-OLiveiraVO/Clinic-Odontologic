@@ -2,7 +2,7 @@ import { Admin } from "@prisma/client";
 import { IAdminUpdateRequestDTO } from "modules/admin/dtos/IAdminUpdateRequestDTO";
 import { ICreateAdminDTO } from "modules/admin/dtos/ICreateAdminDTO";
 import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
-import { PrismaService } from "../../../../../prisma/prisma.service";
+import { PrismaService } from "../../../../shared/infra/prisma/prisma.service";
 import { Injectable } from "@nestjs/common";
 import { v4 as uuidV4 } from "uuid";
 
