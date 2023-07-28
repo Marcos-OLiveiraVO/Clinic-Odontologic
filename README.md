@@ -18,6 +18,7 @@ The Dental Clinic System offers the following key features:
 - the system is being developing so the diagram should be change in the future and will.
 
 ![System Diagram](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/e931a5b8-c8af-4f1a-ab75-69d1b473a2c6)
+![hL1BJWCn3Dtd5APhUW4Mg2C4RAk2s5iPTsefdyhn2CJdF9o04_HY99fCnLGjI41MphFzFbuaHT7UEtEc6_84-9ZcKJ1qP1oj5JI2SBTHQ5d8AiTW35gD0athEN1ImJR_C04Me3PlIIWe5RWRojfOaQMjpJHv4qjRlW8cloAJzHt1NOR88xmO6CXXFd-zX5dJSbb0EO](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/f06d72d7-b3a7-415f-ae70-2387b7f21e76)
 
 ## Documentation
 
