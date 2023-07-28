@@ -15,12 +15,11 @@ O sistema de clínica odontológica é uma aplicação web que permite a gestão
 - Registro e gestão de pagamentos
 
 ## Diagrama do Sistema
-![image](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/e931a5b8-c8af-4f1a-ab75-69d1b473a2c6)
+![diagram](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/b8347297-12d5-4e80-a568-741634a5454f)
+
 
 ## Documentação
 [Para toda a documentação, consulte o documentation.md](documentation.md)
-
-[Para uma versão da documentação em português, acesse.](documentationBR.md)
 
 ## Tecnologias Utilizadas
 
