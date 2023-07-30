@@ -15,9 +15,12 @@ The Dental Clinic System offers the following key features:
 - **Payment Recording**: Record and manage payments made by patients for their invoices. The system provides a straightforward interface for tracking payment status and history.
 
 ## System Diagram
-- the system is being developing so the diagram should be change in the future.
+- the system is being developing so the diagram should be change in the future and will.
 
-![System Diagram](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/e931a5b8-c8af-4f1a-ab75-69d1b473a2c6)
+![SystemDiagram](https://github.com/Marcos-OLiveiraVO/Clinic-Odontologic/assets/88260644/c1ef40ee-93de-4aee-9d71-795c0ea1069e)
+
+
+
 
 ## Documentation
 
