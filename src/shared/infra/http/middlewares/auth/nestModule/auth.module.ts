@@ -6,6 +6,8 @@ import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
 import { PrismaModule } from "../../../../prisma/prisma.module";
 import { AuthController } from "shared/infra/http/middlewares/auth/controllers/auth.controller";
 import { AuthService } from "../useCases/authAdmin/authUseCase";
+import { AuthGuard } from "../AuthGuard/AuthGuard";
+import { APP_GUARD } from "@nestjs/core";
 
 @Module({
   imports: [
@@ -27,6 +29,6 @@ import { AuthService } from "../useCases/authAdmin/authUseCase";
       useClass: AdminRepository,
     },
   ],
-  exports: [AuthService],
+  exports: [AuthService, IAdminRepository],
 })
 export class AuthModule {}

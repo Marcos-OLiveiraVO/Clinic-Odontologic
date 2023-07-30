@@ -1,11 +1,5 @@
-import {
-  Body,
-  Controller,
-  HttpCode,
-  Post,
-  Res,
-  UseGuards,
-} from "@nestjs/common";
+import { Body, Controller, HttpCode, Post, UseGuards } from "@nestjs/common";
+
 import { CreateAdminUseCase } from "./createAdminUseCase";
 import { ICreateAdminDTO } from "modules/admin/dtos/ICreateAdminDTO";
 import { Admin } from "@prisma/client";

@@ -9,6 +9,7 @@ export default defineConfig({
       provider: "v8",
       reporter: ["html"],
     },
+    setupFiles: ["./src/shared/infra/prisma/__mocks__/mocks.ts"],
   },
   plugins: [tsconfigPaths()],
 });

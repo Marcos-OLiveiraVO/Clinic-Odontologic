@@ -4,7 +4,6 @@ import { ICreateAdminDTO } from "modules/admin/dtos/ICreateAdminDTO";
 import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
 import { PrismaService } from "../../../../shared/infra/prisma/prisma.service";
 import { Injectable } from "@nestjs/common";
-import { v4 as uuidV4 } from "uuid";
 
 @Injectable()
 class AdminRepository implements IAdminRepository {
