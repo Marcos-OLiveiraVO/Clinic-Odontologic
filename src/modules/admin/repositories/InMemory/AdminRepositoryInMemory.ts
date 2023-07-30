@@ -1,9 +1,9 @@
-import { Admin } from "@prisma/client";
 import { v4 as uuidV4 } from "uuid";
 
 import { IAdminRepository } from "../IAdminRepository";
 import { ICreateAdminDTO } from "modules/admin/dtos/ICreateAdminDTO";
 import { IAdminUpdateRequestDTO } from "modules/admin/dtos/IAdminUpdateRequestDTO";
+import { Admin } from "modules/admin/infra/prisma/entities/admin";
 
 class AdminRepositoryInMemory implements IAdminRepository {
   admins: Admin[] = [];

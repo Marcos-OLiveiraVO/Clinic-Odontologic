@@ -1,6 +1,6 @@
-import { Admin } from "@prisma/client";
 import { ICreateAdminDTO } from "../dtos/ICreateAdminDTO";
 import { IAdminUpdateRequestDTO } from "../dtos/IAdminUpdateRequestDTO";
+import { Admin } from "../infra/prisma/entities/admin";
 
 export abstract class IAdminRepository {
   abstract create(data: ICreateAdminDTO): Promise<Admin>;

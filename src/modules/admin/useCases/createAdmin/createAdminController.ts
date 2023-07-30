@@ -2,8 +2,8 @@ import { Body, Controller, HttpCode, Post, UseGuards } from "@nestjs/common";
 
 import { CreateAdminUseCase } from "./createAdminUseCase";
 import { ICreateAdminDTO } from "modules/admin/dtos/ICreateAdminDTO";
-import { Admin } from "@prisma/client";
 import { AuthGuard } from "shared/infra/http/middlewares/auth/AuthGuard/AuthGuard";
+import { Admin } from "modules/admin/infra/prisma/entities/admin";
 
 @Controller("admin")
 class CreateAdminController {

@@ -2,9 +2,8 @@ import { AppError } from "@errors/appError";
 import { ICreateAdminDTO } from "modules/admin/dtos/ICreateAdminDTO";
 import { hash } from "bcrypt";
 import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
-import { Admin } from "@prisma/client";
 import { Injectable } from "@nestjs/common";
-import { v4 as uuidV4 } from "uuid";
+import { Admin } from "modules/admin/infra/prisma/entities/admin";
 
 @Injectable()
 class CreateAdminUseCase {

@@ -1,5 +1,5 @@
 import { AppError } from "@errors/appError";
-import { Inject, Injectable } from "@nestjs/common";
+import { Injectable } from "@nestjs/common";
 import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
 
 @Injectable()

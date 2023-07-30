@@ -2,9 +2,9 @@ import { AppError } from "@errors/appError";
 import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
 
 import { hash } from "bcrypt";
-import { Admin } from "@prisma/client";
 import { IAdminUpdateRequestDTO } from "modules/admin/dtos/IAdminUpdateRequestDTO";
 import { Injectable } from "@nestjs/common";
+import { Admin } from "modules/admin/infra/prisma/entities/admin";
 
 @Injectable()
 class UpdateAdminUseCase {
