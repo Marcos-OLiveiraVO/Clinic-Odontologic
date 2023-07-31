@@ -18,7 +18,7 @@ class PatientRepository implements IPatientRepository {
     medical_record_id,
     authorization_level,
   }: ICreatePatientDTO): Promise<Patient> {
-    return await prisma.patient.create({
+    return await this.prismaService.prisma.patient.create({
       data: {
         id,
         name,
@@ -33,7 +33,7 @@ class PatientRepository implements IPatientRepository {
   }
 
   async findByEmail(email: string): Promise<Patient> {
-    const patient = await prisma.patient.findFirst({
+    const patient = await this.prismaService.prisma.patient.findFirst({
       where: {
         email,
       },
@@ -43,7 +43,7 @@ class PatientRepository implements IPatientRepository {
   }
 
   async listAll(): Promise<Patient[]> {
-    return await prisma.patient.findMany();
+    return await this.prismaService.prisma.patient.findMany();
   }
 
   async update({
@@ -54,7 +54,7 @@ class PatientRepository implements IPatientRepository {
     new_medical_history_id,
     new_medical_record_id,
   }: IUpdateRequestPatient): Promise<Patient> {
-    const patient = await prisma.patient.update({
+    const patient = await this.prismaService.prisma.patient.update({
       where: {
         email: originalEmail,
       },
@@ -71,7 +71,7 @@ class PatientRepository implements IPatientRepository {
   }
 
   async remove(email: string): Promise<void> {
-    await prisma.patient.delete({ where: { email } });
+    await this.prismaService.prisma.patient.delete({ where: { email } });
   }
 }
 
