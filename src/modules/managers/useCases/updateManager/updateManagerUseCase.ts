@@ -1,6 +1,6 @@
 import { AppError } from "@errors/appError";
 import { IUpdateRequestManager } from "modules/managers/dtos/IUpdateRequestManager";
-import { Manager } from "modules/managers/infra/typeorm/entities/Manager";
+import { Manager } from "modules/managers/infra/prisma/entities/Manager";
 import { IManagerRepository } from "modules/managers/repositories/IManagerRepository";
 
 class UpdateManagerUseCase {

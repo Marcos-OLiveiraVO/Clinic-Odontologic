@@ -1,6 +1,6 @@
 import { ICreateManagerDTO } from "../dtos/ICreateManagerDTO";
 import { IUpdateRequestManager } from "../dtos/IUpdateRequestManager";
-import { Manager } from "../infra/typeorm/entities/Manager";
+import { Manager } from "../infra/prisma/entities/Manager";
 
 interface IManagerRepository {
   create(manager: ICreateManagerDTO): Promise<Manager>;

@@ -2,7 +2,7 @@ import { AppError } from "@errors/appError";
 import { ICreateManagerDTO } from "modules/managers/dtos/ICreateManagerDTO";
 import { IManagerRepository } from "modules/managers/repositories/IManagerRepository";
 import { hash } from "bcrypt";
-import { Manager } from "modules/managers/infra/typeorm/entities/Manager";
+import { Manager } from "modules/managers/infra/prisma/entities/Manager";
 
 class CreateManagerUseCase {
   constructor(private manageRepository: IManagerRepository) {}
