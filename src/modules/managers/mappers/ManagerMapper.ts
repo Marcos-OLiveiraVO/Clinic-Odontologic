@@ -1,6 +1,6 @@
-import { Manager } from "@prisma/client";
 import { instanceToInstance } from "class-transformer";
 import { IResponseManagerProfile } from "../dtos/IResponseManagerProfile";
+import { Manager } from "../infra/typeorm/entities/Manager";
 
 class ManagerMapper {
   static ToDTO({
