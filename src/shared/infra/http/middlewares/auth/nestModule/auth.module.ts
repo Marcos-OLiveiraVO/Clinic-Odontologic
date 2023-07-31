@@ -22,11 +22,12 @@ import { AdminRepository } from "modules/admin/infra/prisma/repositories/adminRe
   controllers: [AuthController],
   providers: [
     AuthService,
+    AdminRepository,
     {
       provide: IAdminRepository,
       useClass: AdminRepository,
     },
   ],
-  exports: [AuthService, IAdminRepository],
+  exports: [AuthService, AdminRepository, IAdminRepository],
 })
 export class AuthModule {}
