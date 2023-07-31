@@ -1,15 +1,15 @@
 import request from "supertest";
-import { beforeAll, describe, it, expect, afterAll } from "vitest";
+import { beforeAll, describe, it, afterAll } from "vitest";
 import { INestApplication } from "@nestjs/common";
-import { Test } from "@nestjs/testing";
-import { PrismaService } from "shared/infra/prisma/prisma.service";
+import { Test, TestingModule } from "@nestjs/testing";
 import { AppModule } from "shared/infra/http/app.module";
 
 describe("Admin Controller", async () => {
   let app: INestApplication;
+  let access_token: string;
 
   beforeAll(async () => {
-    const moduleRef = await Test.createTestingModule({
+    const moduleRef: TestingModule = await Test.createTestingModule({
       imports: [AppModule],
     }).compile();
 
@@ -22,6 +22,17 @@ describe("Admin Controller", async () => {
   });
 
   it("should be able to create a new admin", async () => {
+    const authenticate = await request(app.getHttpServer())
+      .post("/auth/login")
+      .send({
+        email: "admintest2727@gmail.com",
+        password: "admin",
+      })
+      .expect(200);
+
+    access_token = authenticate.body;
+    console.log(access_token);
+
     return request(app.getHttpServer())
       .post("/admin")
       .send({
@@ -30,6 +41,7 @@ describe("Admin Controller", async () => {
         password: "1234567",
         username: "adminTest293",
       })
+      .set("Authorization", `Bearer ${access_token}`)
       .expect(201);
   });
 });
