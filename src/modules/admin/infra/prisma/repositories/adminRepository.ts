@@ -1,9 +1,9 @@
 import { IAdminUpdateRequestDTO } from "modules/admin/dtos/IAdminUpdateRequestDTO";
 import { ICreateAdminDTO } from "modules/admin/dtos/ICreateAdminDTO";
 import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
-import { PrismaService } from "../../../../shared/infra/prisma/prisma.service";
 import { Injectable } from "@nestjs/common";
-import { Admin } from "./entities/admin";
+import { PrismaService } from "shared/infra/prisma/prisma.service";
+import { Admin } from "../entities/Admin";
 
 @Injectable()
 class AdminRepository implements IAdminRepository {
