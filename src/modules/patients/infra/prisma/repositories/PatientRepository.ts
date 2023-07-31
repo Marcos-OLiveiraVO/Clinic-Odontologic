@@ -1,12 +1,13 @@
-import { Patient, PrismaClient } from "@prisma/client";
+import { ICreatePatientDTO } from "modules/patients/dtos/ICreatePatientDTO";
+import { IUpdateRequestPatient } from "modules/patients/dtos/IUpdateRequestPatient";
 
-import { IPatientCreateDTO } from "modules/patients/dtos/IPatientCreateDTO";
-import { IPatientRequestUpdateDTO } from "modules/patients/dtos/IPatientRequestUpdateDTO";
 import { IPatientRepository } from "modules/patients/repositories/IPatientRepository";
-
-const prisma = new PrismaClient();
+import { PrismaService } from "shared/infra/prisma/prisma.service";
+import { Patient } from "../entities/Patient";
 
 class PatientRepository implements IPatientRepository {
+  constructor(private prismaService: PrismaService) {}
+
   async create({
     id,
     name,
@@ -15,7 +16,8 @@ class PatientRepository implements IPatientRepository {
     insurance_id,
     medical_history_id,
     medical_record_id,
-  }: IPatientCreateDTO): Promise<Patient> {
+    authorization_level,
+  }: ICreatePatientDTO): Promise<Patient> {
     return await prisma.patient.create({
       data: {
         id,
@@ -25,6 +27,7 @@ class PatientRepository implements IPatientRepository {
         insurance_id,
         medical_history_id,
         medical_record_id,
+        authorization_level,
       },
     });
   }
@@ -50,7 +53,7 @@ class PatientRepository implements IPatientRepository {
     originalEmail,
     new_medical_history_id,
     new_medical_record_id,
-  }: IPatientRequestUpdateDTO): Promise<Patient> {
+  }: IUpdateRequestPatient): Promise<Patient> {
     const patient = await prisma.patient.update({
       where: {
         email: originalEmail,

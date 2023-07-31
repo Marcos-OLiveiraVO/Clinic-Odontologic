@@ -1,9 +1,9 @@
-import { Patient } from "@prisma/client";
 import { v4 as uuidV4 } from "uuid";
 
 import { IPatientRepository } from "../IPatientRepository";
 import { ICreatePatientDTO } from "modules/patients/dtos/ICreatePatientDTO";
 import { IUpdateRequestPatient } from "modules/patients/dtos/IUpdateRequestPatient";
+import { Patient } from "modules/patients/infra/prisma/entities/Patient";
 
 class PatientRepositoryInMemory implements IPatientRepository {
   patient: Patient[] = [];

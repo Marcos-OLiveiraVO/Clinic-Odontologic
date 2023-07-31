@@ -1,9 +1,9 @@
 import { Injectable } from "@nestjs/common";
 import { AppError } from "../../../../shared/errors/appError";
 
-import { Patient } from "@prisma/client";
 import { IPatientRepository } from "modules/patients/repositories/IPatientRepository";
 import { ICreatePatientDTO } from "modules/patients/dtos/ICreatePatientDTO";
+import { Patient } from "modules/patients/infra/prisma/entities/Patient";
 
 @Injectable()
 class CreatePatientUseCase {

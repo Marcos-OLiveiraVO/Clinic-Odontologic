@@ -1,6 +1,6 @@
 import { AppError } from "@errors/appError";
-import { Patient } from "@prisma/client";
 import { IUpdateRequestPatient } from "modules/patients/dtos/IUpdateRequestPatient";
+import { Patient } from "modules/patients/infra/prisma/entities/Patient";
 import { IPatientRepository } from "modules/patients/repositories/IPatientRepository";
 
 class UpdatePatientUseCase {

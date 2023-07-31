@@ -1,6 +1,6 @@
-import { Patient } from "@prisma/client";
 import { instanceToInstance } from "class-transformer";
 import { IResponsePatientProfile } from "../dtos/IResponsePatientProfile";
+import { Patient } from "../infra/prisma/entities/Patient";
 
 class PatientMap {
   static toDTO({

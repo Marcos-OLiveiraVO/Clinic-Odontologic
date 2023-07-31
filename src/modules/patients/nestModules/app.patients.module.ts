@@ -1,7 +1,6 @@
 import { AppError } from "@errors/appError";
 import { Module } from "@nestjs/common";
 import { ListPatientsController } from "../useCases/listPatients/listPatientsController";
-import { AuthService } from "auth/auth.service";
 import { CreatePatientUseCase } from "../useCases/createPatient/createPatientUseCase";
 import { ListPatientsUseCase } from "../useCases/listPatients/listPatientsUseCase";
 import { RemovePatientUseCase } from "../useCases/removePatient/removePatientUseCase";

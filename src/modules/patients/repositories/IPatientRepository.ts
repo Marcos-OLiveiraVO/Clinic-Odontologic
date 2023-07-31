@@ -1,6 +1,6 @@
-import { Patient } from "@prisma/client";
 import { ICreatePatientDTO } from "../dtos/ICreatePatientDTO";
 import { IUpdateRequestPatient } from "../dtos/IUpdateRequestPatient";
+import { Patient } from "../infra/prisma/entities/Patient";
 
 interface IPatientRepository {
   create(data: ICreatePatientDTO): Promise<Patient>;
