@@ -1,23 +1,9 @@
-import { Injectable, Scope } from "@nestjs/common";
-import { PrismaClient, Prisma } from "@prisma/client";
+import { Injectable, OnModuleInit } from "@nestjs/common";
+import { PrismaClient } from "@prisma/client";
 
-@Injectable({ scope: Scope.REQUEST })
-export class PrismaService {
-  public readonly prisma: PrismaClient;
-
-  constructor() {
-    this.prisma = new PrismaClient();
-  }
-
+@Injectable()
+export class PrismaService extends PrismaClient implements OnModuleInit {
   async onModuleInit() {
-    await this.prisma.$connect();
-  }
-
-  async onModuleDestroy() {
-    try {
-      await this.prisma.$disconnect();
-    } catch (error) {
-      console.error("Error while disconnecting PrismaClient:", error);
-    }
+    await this.$connect();
   }
 }

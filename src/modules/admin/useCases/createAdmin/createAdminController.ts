@@ -9,7 +9,7 @@ import { Admin } from "modules/admin/infra/prisma/entities/admin";
 class CreateAdminController {
   constructor(private createAdminUseCase: CreateAdminUseCase) {}
 
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   @Post()
   @HttpCode(201)
   async create(@Body() createAdminDTo: ICreateAdminDTO): Promise<Admin> {
