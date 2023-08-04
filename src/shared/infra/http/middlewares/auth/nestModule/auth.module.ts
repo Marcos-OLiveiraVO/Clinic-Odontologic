@@ -1,5 +1,5 @@
 import { Module } from "@nestjs/common";
-import { JwtModule } from "@nestjs/jwt";
+import { JwtModule, JwtService } from "@nestjs/jwt";
 
 import { IAdminRepository } from "modules/admin/repositories/IAdminRepository";
 import { PrismaModule } from "../../../../prisma/prisma.module";
@@ -27,6 +27,7 @@ import { AdminRepository } from "modules/admin/infra/prisma/repositories/adminRe
       provide: IAdminRepository,
       useClass: AdminRepository,
     },
+    JwtService,
   ],
   exports: [AuthService, AdminRepository, IAdminRepository],
 })
