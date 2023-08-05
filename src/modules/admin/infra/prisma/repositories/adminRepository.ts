@@ -19,7 +19,7 @@ class AdminRepository implements IAdminRepository {
     updatedAt,
     id,
   }: ICreateAdminDTO): Promise<Admin> {
-    return await this.prismaService.prisma.admin.create({
+    return await this.prismaService.admin.create({
       data: {
         id,
         name,
@@ -34,7 +34,7 @@ class AdminRepository implements IAdminRepository {
   }
 
   async findByEmail(email: string): Promise<Admin> {
-    const admin = await this.prismaService.prisma.admin.findFirst({
+    const admin = await this.prismaService.admin.findFirst({
       where: {
         email,
       },
@@ -50,7 +50,7 @@ class AdminRepository implements IAdminRepository {
     newUsername,
     originalEmail,
   }: IAdminUpdateRequestDTO): Promise<Admin> {
-    const adminUpdated = await this.prismaService.prisma.admin.update({
+    const adminUpdated = await this.prismaService.admin.update({
       where: {
         email: originalEmail,
       },
@@ -65,7 +65,7 @@ class AdminRepository implements IAdminRepository {
     return adminUpdated;
   }
   async remove(email: string): Promise<void> {
-    await this.prismaService.prisma.admin.delete({
+    await this.prismaService.admin.delete({
       where: {
         email,
       },
