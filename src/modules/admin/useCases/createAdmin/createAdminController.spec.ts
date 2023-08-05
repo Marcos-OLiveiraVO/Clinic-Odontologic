@@ -6,7 +6,6 @@ import { AppModule } from "shared/infra/http/app.module";
 
 describe("Admin Controller", async () => {
   let app: INestApplication;
-  let access_token: string;
 
   beforeAll(async () => {
     const moduleRef: TestingModule = await Test.createTestingModule({
@@ -30,18 +29,17 @@ describe("Admin Controller", async () => {
       })
       .expect(200);
 
-    access_token = authenticate.body;
-    console.log(access_token);
+    const token = authenticate.body.token;
 
     return request(app.getHttpServer())
       .post("/admin")
       .send({
-        name: "admin335",
-        email: "admintest256@gmail.com",
+        name: "adminT8",
+        email: "adminT8@gmail.com",
         password: "1234567",
-        username: "adminTest293",
+        username: "adminT8293",
       })
-      .set("Authorization", `Bearer ${access_token}`)
+      .set("Authorization", `Bearer ${token}`)
       .expect(201);
   });
 });

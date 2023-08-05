@@ -28,7 +28,8 @@ import { JwtModule, JwtService } from "@nestjs/jwt";
       useClass: AdminRepository,
     },
     JwtService,
+    AdminRepository,
   ],
-  exports: [AuthService, IAdminRepository],
+  exports: [AuthService, AdminRepository, IAdminRepository, JwtService],
 })
 export class AuthModule {}
