@@ -1,7 +1,7 @@
-import { Injectable, Scope } from "@nestjs/common";
+import { Injectable } from "@nestjs/common";
 import { PrismaClient, Prisma } from "@prisma/client";
 
-@Injectable({ scope: Scope.REQUEST })
+@Injectable()
 export class PrismaService {
   public readonly prisma: PrismaClient;
 
@@ -14,10 +14,6 @@ export class PrismaService {
   }
 
   async onModuleDestroy() {
-    try {
-      await this.prisma.$disconnect();
-    } catch (error) {
-      console.error("Error while disconnecting PrismaClient:", error);
-    }
+    await this.prisma.$disconnect();
   }
 }
