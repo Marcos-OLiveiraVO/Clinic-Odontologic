@@ -18,10 +18,12 @@ class AuthService {
       throw new UnauthorizedException();
     }
 
-    const payload = { sub: admin.id, username: admin.username };
+    const payload = { username: admin.username, email: admin.email };
 
     return {
-      access_token: await this.jwtService.signAsync(payload),
+      token: await this.jwtService.signAsync(payload, {
+        secret: process.env.JWT_SECRET,
+      }),
     };
   }
 }
