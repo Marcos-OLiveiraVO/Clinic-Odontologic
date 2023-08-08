@@ -34,10 +34,10 @@ describe("Admin Controller", async () => {
     return request(app.getHttpServer())
       .post("/admin")
       .send({
-        name: "adminT8",
-        email: "adminT8@gmail.com",
+        name: "adminT9",
+        email: "adminT9@gmail.com",
         password: "1234567",
-        username: "adminT8293",
+        username: "adminT9",
       })
       .set("Authorization", `Bearer ${token}`)
       .expect(201);

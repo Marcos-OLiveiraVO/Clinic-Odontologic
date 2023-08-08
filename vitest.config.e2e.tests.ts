@@ -4,7 +4,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   test: {
-    include: ["**/*.spec.ts"],
+    include: ["**/*e2e.spec.ts"],
     globals: true,
     root: "./",
   },
