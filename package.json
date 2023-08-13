@@ -6,7 +6,7 @@
     "start": "node ./dist/shared/infra/http/main.js",
     "start:dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/main.ts",
     "start:prod": "node ./dist/shared/infra/http/main.js",
-    "test": "vitest",
+    "test:unit": "vitest run -c ./vitest.unit.config.ts",
     "test:e2e": "vitest run --config ./vitest.config.e2e.tests.ts ",
     "test:coverage": "vitest run --coverage",
     "test:seed": "ts-node-dev src/shared/infra/prisma/seed/admin.ts"

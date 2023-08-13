@@ -1,12 +1,12 @@
-import swc from "unplugin-swc";
-import { defineConfig } from "vitest/config";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { defineConfig, mergeConfig } from "vitest/config";
+import vitestConfig from "./vitest.config";
 
-export default defineConfig({
-  test: {
-    include: ["**/*.spec.ts"],
-    globals: true,
-    root: "./",
-  },
-  plugins: [swc.vite(), tsconfigPaths()],
-});
+export default mergeConfig(
+  vitestConfig,
+  defineConfig({
+    test: {
+      include: ["**/*.e2e-{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+      environmentMatchGlobs: [["src/**", "node"]],
+    },
+  })
+);
